@@ -114,7 +114,7 @@ function init()
         });
     });
 
-    /*map.on('baselayerchange', function (e)
+    map.on('baselayerchange', function (e)
     {
         switch(e.name) {
             default:
@@ -128,7 +128,7 @@ function init()
                 break;
 
         }
-    });*/
+    });
 
     loadMarkers();
 
