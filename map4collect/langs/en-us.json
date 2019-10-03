@@ -62,7 +62,7 @@
 	{"key": "cups_queen.name", "value": "Королева кубков"},
 	{"key": "cups_queen_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=427s\">Смотреть видео</a>"},
 	{"key": "cups_queen_2.desc", "value": "Внутри шахты. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=903s\">Смотреть видео</a>"},
-	{"key": "cups_queen_3.desc", "value": "Внутри шахты на ящике рядом с фонарем.<br/><img src=\"https://i.imgur.com/ciqlFTG.png\" style=\"width:200px;\"> <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1381s\">Смотреть видео</a>"},
+	{"key": "cups_queen_3.desc", "value": "Внутри шахты на ящике рядом с фонарем. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1381s\">Смотреть видео</a>"},
 
 	{"key": "cups_king.name", "value": "Король кубков"},
 	{"key": "cups_king_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=460s\">Смотреть видео</a>"},
