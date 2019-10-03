@@ -2,7 +2,7 @@
 	{"key": "cups_ace.name", "value": "Туз кубков"},
 	{"key": "cups_ace_1.desc", "value": ""},
 	{"key": "cups_ace_2.desc", "value": ""},
-	{"key": "cups_ace_3.desc", "value": "On the nightstand in the right bedroom."},
+	{"key": "cups_ace_3.desc", "value": "На тумбочке в правой спальне."},
 
 	{"key": "cups_two.name", "value": "Двойка кубков"},
 	{"key": "cups_two_1.desc", "value": ""},
@@ -25,7 +25,7 @@
 	{"key": "cups_five_3.desc", "value": "On top of the theatre."},
 
 	{"key": "cups_six.name", "value": "Шестерка кубков"},
-	{"key": "cups_six_1.desc", "value": "Inside on the eastern windowsil."},
+	{"key": "cups_six_1.desc", "value": "Внутри на восточном подокойнике."},
 	{"key": "cups_six_2.desc", "value": "On the back of the wagon."},
 	{"key": "cups_six_3.desc", "value": ""},
 
