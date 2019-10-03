@@ -1,1 +1,0 @@
-# greedwasgood.github.io
