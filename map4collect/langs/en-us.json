@@ -6,7 +6,7 @@
 
 	{"key": "cups_two.name", "value": "Двойка кубков"},
 	{"key": "cups_two_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=78s\">Смотреть видео</a>"},
-	{"key": "cups_two_2.desc", "value": "На ящике на нижней палубе железнодорожного моста. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=541s\">Смотреть видео</a>"},
+	{"key": "cups_two_2.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=541s\">Смотреть видео</a>"},
 	{"key": "cups_two_3.desc", "value": "На тумбочке. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1007s\">Смотреть видео</a>"},
 
 	{"key": "cups_three.name", "value": "Тройка кубков"},
@@ -26,7 +26,7 @@
 
 	{"key": "cups_six.name", "value": "Шестерка кубков"},
 	{"key": "cups_six_1.desc", "value": "Внутри на восточном подокойнике. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=201s\">Смотреть видео</a>"},
-	{"key": "cups_six_2.desc", "value": "На задней части фургона. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=674s\">Смотреть видео</a>"},
+	{"key": "cups_six_2.desc", "value": "На задней части фургона.<br/><a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=674s\">Смотреть видео</a>"},
 	{"key": "cups_six_3.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1149s\">Смотреть видео</a>"},
 
 	{"key": "cups_seven.name", "value": "Семерка кубков"},
@@ -126,7 +126,7 @@
 
 	{"key": "swords_page.name", "value": "Паж мечей"},
 	{"key": "swords_page_1.desc", "value": ""},
-	{"key": "swords_page_2.desc", "value": "На бревенчатой скамье с фонарем на ней"},
+	{"key": "swords_page_2.desc", "value": "На бревенчатой скамье с фонарем на ней."},
 	{"key": "swords_page_3.desc", "value": ""},
 
 	{"key": "swords_queen.name", "value": "Королева мечей"},
