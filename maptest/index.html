@@ -102,13 +102,6 @@
             </select>
         </div>
         <div class="input-container">
-            <label for="tools">Язык</label>
-            <select class="input-day" id="language">
-                <!-- TODO: select the correct language selected by user -->
-                <option value="en-us" selected>Русский</option>
-            </select>
-        </div>
-        <div class="input-container">
             <label for="routes">Показать маршруты</label>
             <select class="input-day" id="routes">
                 <option value="1">Да</option>
@@ -127,6 +120,14 @@
             <select class="input-day" id="show-coordinates">
                 <option value="1">Да</option>
                 <option value="0" selected>Нет</option>
+            </select>
+        </div>
+		<div class="input-container">
+            <label for="reset-markers" data-text="menu.reset_markers_daily">Показать все скрытые марки</label>
+            <select class="input-day" id="reset-markers">
+                <option value="true" data-text="menu.yes" selected>Yes</option>
+                <option value="false" data-text="menu.no">No</option>
+                <option value="clear" data-text="menu.reset">Reset</option>
             </select>
         </div>
     </div>

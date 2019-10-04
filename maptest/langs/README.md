@@ -8,12 +8,13 @@ english (en-en.json)
   
 german (de-de.json)
   - flameango
+  - Rakmarok
   
 spanish (es-es.json)
   - no-one yet!
   
 french (fr-fr.json)
-  - no-one yet!
+  - Nopitch
   
 italian (it-it.json)
   - no-one yet!
@@ -37,5 +38,5 @@ chinese simplified (zh-s.json)
   - yamazakitouma
   
 chinese traditional (zh-t.json)
-  - no-one yet!
+  - yamazakitouma
   

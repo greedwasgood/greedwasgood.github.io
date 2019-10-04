@@ -4,10 +4,12 @@ var markers = [];
 var markersLayer = new L.LayerGroup();
 var searchTerms = [];
 var visibleMarkers = [];
+var resetMarkersDaily;
 var disableMarkers = [];
 var categories = [
     'american-flowers', 'antique-bottles', 'arrowhead', 'bird-eggs', 'coin', 'family-heirlooms', 'lost-bracelet',
-    'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands', 'nazar'
+    'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands', 'nazar',
+    'fast-travel'
 ];
 var enabledTypes = categories;
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
@@ -41,10 +43,30 @@ var nazarLocations = [
     {"id":"12","x":"-124.03125","y":"34.171875"}
 ];
 
+var fastTravelLocations = [
+    {"text": "fasttravel.tumbleweed", "x": "-109.3203125","y": "26.859375"},
+    {"text": "fasttravel.armadillo", "x": "-104.375","y": "53.4140625"},
+    {"text": "fasttravel.macfarlanes", "x": "-101.515625","y": "72.4140625"},
+    {"text": "fasttravel.manzanita", "x": "-88.5859375","y": "80.7890625"},
+    {"text": "fasttravel.blackwater", "x": "-82.9140625","y": "99.765625"},
+    {"text": "fasttravel.strawberry", "x": "-70.03125","y": "84.296875"},
+    {"text": "fasttravel.valentine", "x": "-53.578125","y": "108.3828125"},
+    {"text": "fasttravel.colter", "x": "-25.9296875","y": "91.046875"},
+    {"text": "fasttravel.emerald", "x": "-56.7734375","y": "134.8203125"},
+    {"text": "fasttravel.rhodes", "x": "-83.6640625","y": "130.65625"},
+    {"text": "fasttravel.wapiti", "x": "-29.7265625","y": "118.7890625"},
+    {"text": "fasttravel.van_horn", "x": "-53.703125","y": "156.3203125"},
+    {"text": "fasttravel.annesburg", "x": "-43.46875","y": "156.765625"},
+    {"text": "fasttravel.saint_denis", "x": "-86.328125","y": "152.6796875"},
+    {"text": "fasttravel.lagras", "x": "-72.59375","y": "143.859375"}
+];
+
+var nazarCurrentLocation = 11;
+
 function init()
 {
     if(typeof Cookies.get('removed-items') === 'undefined')
-        Cookies.set('removed-items', '', { expires: 1 });
+        Cookies.set('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
 
     if(typeof Cookies.get('language') === 'undefined')
     {
@@ -54,9 +76,19 @@ function init()
             Cookies.set('language', 'en-us');
     }
 
+    if(!avaliableLanguages.includes(Cookies.get('language')))
+        Cookies.set('language', 'en-us');
+
+    if(typeof Cookies.get('removed-markers-daily') === 'undefined')
+        Cookies.set('removed-markers-daily', 'true', 999);
+
+    resetMarkersDaily = Cookies.get('removed-markers-daily') == 'true';
+    $("#reset-markers").val(resetMarkersDaily.toString());
+
+
 
     lang = Cookies.get('language');
-
+    $("#language").val(lang);
 
     disableMarkers = Cookies.get('removed-items').split(';');
 
@@ -79,8 +111,8 @@ function init()
     var baseMaps = {
         "Default": defaultLayer,
         "Detailed": detailLayer,
-        "Dark": darkLayer
     };
+
 
     L.control.layers(baseMaps).addTo(map);
 
@@ -93,22 +125,33 @@ function init()
     {
         $('.remove-button').click(function(e)
         {
-            var itemId = $(event.target).data("item");
-            if(disableMarkers.includes(itemId.toString()))
+            var itemName = $(event.target).data("item");
+            if(disableMarkers.includes(itemName.toString()))
             {
                 disableMarkers = $.grep(disableMarkers, function(value) {
-                    return value != itemId.toString();
+                    $.each(routesData, function(key, j){
+                        if (disableMarkers.includes(value.key)){
+                            delete value.hidden;
+                        }
+                    });
+                    return value != itemName.toString();
+                    
                 });
-                $(visibleMarkers[itemId]._icon).css('opacity', '1');
+                $(visibleMarkers[itemName]._icon).css('opacity', '1');
             }
             else
-            {
-                disableMarkers.push(itemId.toString());
-                $(visibleMarkers[itemId]._icon).css('opacity', '0.35');
+            {   
+                disableMarkers.push(itemName.toString());
+                $.each(routesData[day], function(b, value){
+                    if (disableMarkers.includes(value.key)){
+                        value.hidden = true;
+                    }
+                });
+                $(visibleMarkers[itemName]._icon).css('opacity', '0.35');
             }
 
-            Cookies.set('removed-items', disableMarkers.join(';'), { expires: 1 });
-
+            Cookies.set('removed-items', disableMarkers.join(';'), { expires: resetMarkersDaily ? 1 : 999});
+            if($("#routes").val() == 1){drawLines()}
 
 
         });
@@ -122,25 +165,26 @@ function init()
             case 'Detailed':
                 $('#map').css('background-color', '#d2b790');
                 break;
-
-            case 'Dark':
-                $('#map').css('background-color', '#3d3d3d');
-                break;
-
+				
         }
     });
 
     loadMarkers();
-
     setCurrentDayCycle();
     loadRoutesData();
-
-
     var pos = [-53.2978125, 68.7596875];
     var offset = 1.15;
     L.imageOverlay('overlays/cave_01.png', [[pos], [pos[0] + offset, pos[1] + offset]]).addTo(map);
 
+}
 
+function getNazarPosition()
+{
+    $.getJSON(`https://madam-nazar-location-api.herokuapp.com/current`, {}, function(x)
+    {
+        nazarCurrentLocation = x.data._id - 1;
+        addNazarMarker();
+    });
 }
 
 function loadLanguage()
@@ -153,6 +197,20 @@ function loadLanguage()
 
         });
         addMarkers();
+        setMenuLanguage();
+    });
+}
+
+function setMenuLanguage()
+{
+    $.each($('[data-text]'), function (key, value)
+    {
+        var temp = $(value);
+        if(languageData[temp.data('text')] == null) {
+            console.error(`[LANG][${lang}]: Text not found: '${temp.data('text')}'`);
+        }
+
+        $(temp).text(languageData[temp.data('text')]);
     });
 }
 
@@ -194,30 +252,40 @@ function setCurrentDayCycle()
         if(Cookies.get('day') != day.toString())
         {
             Cookies.set('day', day, { expires: 1 });
-            Cookies.set('removed-items', '', { expires: 1 });
+            if(resetMarkersDaily)
+                Cookies.set('removed-items', '', { expires: 1 });
         }
     }
 }
 
 function loadRoutesData()
 {
-    routesData = [];
-    $.getJSON("routes.json", {}, function(data)
-    {
-        routesData = data;
+
+    $.getJSON(`assets/routes/day_1.json`, {}, function (data) {
+        routesData[1] = data;
     });
+    $.getJSON(`assets/routes/day_2.json`, {}, function (data) {
+        routesData[2] = data;
+    });
+    $.getJSON(`assets/routes/day_3.json`, {}, function (data) {
+        routesData[3] = data;
+    });
+
+
 }
 
 function drawLines()
 {
     var connections = [];
-    $.each(routesData, function (key, value)
-    {
-        if(value.day == day)
-        {
-            connections.push(value.data);
+    for (var node of routesData[day]){
+        for (var marker of markers){
+            if (marker.text == node.key && marker.day ==day && !disableMarkers.includes(node.key) && enabledTypes.includes(marker.icon)){
+                var connection = [marker.x, marker.y]
+                connections.push(connection);
+            }
         }
-    });
+    }
+    
 
     if (polylines instanceof L.Polyline)
     {
@@ -237,6 +305,9 @@ function loadMarkers()
     {
         markers = data;
         loadLanguage();
+
+        addNazarMarker();
+        addfastTravelMarker();
     });
 
 }
@@ -244,10 +315,6 @@ function loadMarkers()
 function addMarkers()
 {
     markersLayer.clearLayers();
-
-    //loadNazar need be here, when user change day or use search, nazar location will be cleared
-    //TODO: get current nazar day, save in a variable, when the user search, use it to set the marker
-    loadNazar();
 
     visibleMarkers = [];
 
@@ -259,41 +326,64 @@ function addMarkers()
 
         if(enabledTypes.includes(value.icon))
         {
-            if (value.day == day)
+            if (value.day == day || isNaN(value.day)) //if is not a number, will be nazar or fast travel
             {
+                if (languageData[value.text+'.name'] == null)
+                {
+                    console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
+                }
+
                 if (searchTerms.length > 0)
                 {
                     $.each(searchTerms, function (id, term)
                     {
-                        if (languageData[value.text+'.name'] == null)
-                        {
-                            console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
-                        }
                         if (languageData[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
                         {
-                            var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${languageData[value.text+'.name']} - День ${value.day}</h1><p> ${languageData[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Показать/Скрыть</p>`).on('click', addCoordsOnMap);
-                            visibleMarkers[key] = tempMarker;
-                            markersLayer.addLayer(tempMarker);
+                            if (visibleMarkers[value.text] == null)
+                            {
+                                addMarkerOnMap(value);
+
+
+                                //not working as planned
+                                //if (languageData[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) == -1)
+                                //{
+                                //    $(tempMarker._icon).css({'filter': 'grayscale(1)', 'opacity': '0.4'});
+                                //}
+                            }
                         }
                     });
                 }
-                else
-                {
-                    if (languageData[value.text+'.name'] == null)
-                    {
-                        console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
-                    }
-
-                    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${languageData[value.text+'.name']} - День ${value.day}</h1><p> ${languageData[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Показать/Скрыть</p>`).on('click', addCoordsOnMap);
-                    visibleMarkers[key] = tempMarker;
-                    markersLayer.addLayer(tempMarker);
+                else {
+                    addMarkerOnMap(value);
                 }
+
             }
         }
     });
+
     markersLayer.addTo(map);
 
     removeCollectedMarkers();
+}
+
+function addMarkerOnMap(value){
+    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})});
+
+    switch (value.day) {
+        case 'nazar':
+            tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - 4th October</h1><p>  </p>`);
+            break;
+        case 'fasttravel':
+            tempMarker.bindPopup(`<h1>${languageData[value.text + '.name']}</h1><p>  </p>`);
+            break;
+        default:
+            tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - День ${value.day}</h1><p> ${languageData[value.text + '_' + value.day + '.desc']} </p><p class="remove-button" data-item="${value.text}">Показать/Скрыть</p>`).on('click', addCoordsOnMap);
+            break;
+    }
+
+
+    visibleMarkers[value.text] = tempMarker;
+    markersLayer.addLayer(tempMarker);
 }
 
 function removeCollectedMarkers()
@@ -301,31 +391,42 @@ function removeCollectedMarkers()
 
     $.each(markers, function (key, value)
     {
-        if (disableMarkers.includes(key.toString()))
+        if(visibleMarkers[value.text] != null)
         {
-            if(visibleMarkers[key] != null)
+            if (disableMarkers.includes(value.text.toString()))
             {
-                $(visibleMarkers[key]._icon).css('opacity', '.35');
+                $(visibleMarkers[value.text]._icon).css('opacity', '.35');
+            }
+            else
+            {
+                $(visibleMarkers[value.text]._icon).css('opacity', '1');
             }
         }
     });
 }
 
 //loads the current location of Nazar and adds a marker in the correct location
-function loadNazar(){
-    /*
-    Disable request to herokuapp
-    $.getJSON(`https://madam-nazar-location-api.herokuapp.com/current`, {}, function(x)
-    {
-        var nazarMarker = L.marker([nazarLocations[x.data._id - 1].x, nazarLocations[x.data._id - 1].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar</h1>`).on('click', addCoordsOnMap);
-        markersLayer.addLayer(nazarMarker);
+function addNazarMarker()
+{
+    //var nazarMarker = L.marker([nazarLocations[nazarCurrentLocation].x, nazarLocations[nazarCurrentLocation].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'red'})}).bindPopup(`<h1>Madam Nazar - October 3rd</h1>`).on('click', addCoordsOnMap);
+    //markersLayer.addLayer(nazarMarker);
+
+    markers.push({"text": "madam_nazar", "day": "nazar", "tool": "-1", "icon": "nazar", "x": nazarLocations[nazarCurrentLocation].x, "y": nazarLocations[nazarCurrentLocation].y});
+}
+//adds fasttravel points
+function addfastTravelMarker()
+{   
+    $.each(fastTravelLocations, function(b, value){
+        //var ftmarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/fast-travel.png', markerColor: 'gray'})}).bindPopup(`<h1>${value.text}</h1>`).on('click', addCoordsOnMap);
+        //markersLayer.addLayer(ftmarker);
+        markers.push({"text": value.text, "day": "fasttravel", "tool": "-1", "icon": "fast-travel", "x": value.x, "y": value.y});
+
     });
-    */
+}
 
-    /*var nazarMarker = L.marker([nazarLocations[7].x, nazarLocations[7].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Мадам Назар</h1>`).on('click', addCoordsOnMap);
-    markersLayer.addLayer(nazarMarker);*/
-
-
+function customMarker(coords){
+    var nazarMarker = L.marker(coords, {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>debug</h1>`).on('click', addCoordsOnMap);
+    markersLayer.addLayer(nazarMarker);
 }
 
 function addCoordsOnMap(coords)
@@ -374,6 +475,14 @@ function addCoordsOnMap(coords)
     }
 }
 
+function changeCursor()
+{
+    if(showCoordinates || customRouteEnabled)
+        $('.leaflet-grab').css('cursor', 'pointer');
+    else
+        $('.leaflet-grab').css('cursor', 'grab');
+}
+
 $("#day").on("input", function()
 {
     day = $('#day').val();
@@ -381,6 +490,7 @@ $("#day").on("input", function()
 
     if($("#routes").val() == 1)
         drawLines();
+
 });
 
 $("#search").on("input", function()
@@ -415,15 +525,44 @@ $("#tools").on("change", function()
     addMarkers();
 });
 
-$("#custom-routes").on("change", function()
+$("#reset-markers").on("change", function()
 {
-    customRouteConnections = [];
-    map.removeLayer(customRoute);
-    customRouteEnabled = $("#custom-routes").val() == '1';
+    if($("#reset-markers").val() == 'clear')
+    {
+        Cookies.set('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
+        disableMarkers = Cookies.get('removed-items').split(';');
+        $("#reset-markers").val('false');
+    }
+
+    resetMarkersDaily = $("#reset-markers").val() == 'true';
+    Cookies.set('removed-markers-daily', resetMarkersDaily, 999);
+
+
+    removeCollectedMarkers();
 });
 
-$('#show-coordinates').on('change', function() {
+$("#custom-routes").on("change", function()
+{
+    var temp = $("#custom-routes").val();
+    customRouteEnabled = temp == '1';
+    if(temp == 'clear')
+    {
+        customRouteConnections = [];
+        map.removeLayer(customRoute);
+        customRouteEnabled = true;
+        $("#custom-routes").val('1');
+    }
+
+    changeCursor();
+
+
+});
+
+$('#show-coordinates').on('change', function()
+{
     showCoordinates = $('#show-coordinates').val() == '1';
+
+    changeCursor();
 });
 
 $("#language").on("change", function()
@@ -448,6 +587,8 @@ $('.menu-option.clickable').on('click', function ()
         enabledTypes.push(menu.data('type'));
     }
     addMarkers();
+    if($("#routes").val() == 1)
+    drawLines();
 });
 
 $('.menu-toggle').on('click', function()
