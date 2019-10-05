@@ -73,11 +73,11 @@ function init()
         if(avaliableLanguages.includes(navigator.language.toLowerCase()))
             Cookies.set('language', navigator.language.toLowerCase());
         else
-            Cookies.set('language', 'en-us');
+            Cookies.set('language', 'ru');
     }
 
     if(!avaliableLanguages.includes(Cookies.get('language')))
-        Cookies.set('language', 'en-us');
+        Cookies.set('language', 'ru');
 
     if(typeof Cookies.get('removed-markers-daily') === 'undefined')
         Cookies.set('removed-markers-daily', 'true', 999);
