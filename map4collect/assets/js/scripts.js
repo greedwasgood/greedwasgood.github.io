@@ -79,7 +79,6 @@ function init()
     var baseMaps = {
         "Default": defaultLayer,
         "Detailed": detailLayer,
-        "Dark": darkLayer
     };
 
     L.control.layers(baseMaps).addTo(map);
@@ -114,7 +113,17 @@ function init()
         });
     });
 
-    
+    map.on('baselayerchange', function (e)
+    {
+        switch(e.name) {
+            default:
+            case 'Default':
+            case 'Detailed':
+                $('#map').css('background-color', '#d2b790');
+                break;
+				
+        }
+    });
 
     loadMarkers();
 
