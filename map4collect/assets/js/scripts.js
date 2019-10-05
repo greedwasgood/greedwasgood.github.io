@@ -122,11 +122,7 @@ function init()
             case 'Detailed':
                 $('#map').css('background-color', '#d2b790');
                 break;
-
-            case 'Dark':
-                $('#map').css('background-color', '#3d3d3d');
-                break;
-
+				
         }
     });
 
