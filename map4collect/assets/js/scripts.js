@@ -114,17 +114,7 @@ function init()
         });
     });
 
-    map.on('baselayerchange', function (e)
-    {
-        switch(e.name) {
-            default:
-            case 'Default':
-            case 'Detailed':
-                $('#map').css('background-color', '#d2b790');
-                break;
-				
-        }
-    });
+    
 
     loadMarkers();
 
