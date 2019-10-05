@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>RDO Collector map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+    <script src="assets/js/leaflet.awesome-markers.min.js"></script>
+    <link rel="stylesheet" href="assets/css/leaflet.awesome-markers.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+</head>
+
+<body onload="init()">
+<div class="side-menu">
+    <h2 data-text="menu.collectables">Коллекционки</h2>
+    <div class="hide-show-container">
+        <a data-text="menu.hide_all" href="javascript:void(0);" onclick="hideall()">Скрыть все</a>
+        <a data-text="menu.show_all" href="javascript:void(0);" onclick="showall()">Показать все</a>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="american-flowers">
+            <img class="icon" src="./icon/american-flowers.png" />
+            <span data-text="menu.american_flowers">Американские дикие цветы</span>
+            <div class="open-submenu"></div>
+        </div>
+        <div class="menu-hidden" data-type="american-flowers">
+            <p class="collection-value">
+                <span data-text="menu.collectables_value">Стоимость</span>: $155.50
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="antique-bottles">
+            <img class="icon" src="./icon/antique-bottles.png" />
+            <span data-text="menu.antique_bottles">Старинные бутылки алкоголя</span>
+            <div class="open-submenu"></div>
+        </div>
+        <div class="menu-hidden" data-type="antique-bottles">
+            <p class="collection-value">
+                <span data-text="menu.collectables_value">Стоимость</span>: $160.50
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="arrowhead">
+            <img class="icon" src="./icon/arrowhead.png" />
+            <span data-text="menu.arrowhead">Наконечники стрел</span>
+            <div class="open-submenu"></div>
+        </div>
+        <div class="menu-hidden" data-type="arrowhead">
+            <p class="collection-value">
+                <span data-text="menu.collectables_value">Стоимость</span>: $289.00
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="bird-eggs">
+            <img class="icon" src="./icon/bird-eggs.png" />
+            <span data-text="menu.bird_eggs">Птичьи яйца</span>
+            <div class="open-submenu"></div>
+        </div>
+        <div class="menu-hidden" data-type="bird-eggs">
+            <p class="collection-value">
+                <span data-text="menu.collectables_value">Стоимость</span>: $182.50
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="coin">
+            <img class="icon" src="./icon/coin.png" />
+            <span data-text="menu.coin">Монеты</span>
+            <div class="open-submenu"></div>
+        </div>
+        <div class="menu-hidden" data-type="coin">
+            <p class="collection-value">
+                <span data-text="menu.collectables_value">Стоимость</span>: $540.00
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="family-heirlooms">
+            <img class="icon" src="./icon/family-heirlooms.png" />
+            <span data-text="menu.family_heirlooms">Фамильные ценности</span>
+            <div class="open-submenu"></div>
+        </div>
+        <div class="menu-hidden" data-type="family-heirlooms">
+            <p class="collection-value">
+                <span data-text="menu.collectables_value">Стоимость</span>: $292.50
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="lost-bracelet">
+            <img class="icon" src="./icon/lost-bracelet.png" />
+            <span data-text="menu.lost_bracelet">Потерянные драг. браслеты</span>
+            <div class="open-submenu"></div>
+        </div>
+        <div class="menu-hidden" data-type="lost-bracelet">
+            <p class="collection-value">
+                <span data-text="menu.collectables_value">Стоимость</span>: $271.50
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="lost-earrings">
+            <img class="icon" src="./icon/lost-earrings.png" />
+            <span data-text="menu.lost_earrings">Потерянные драг. серьги</span>
+            <div class="open-submenu"></div>
+        </div>
+        <div class="menu-hidden" data-type="lost-earrings">
+            <p class="collection-value">
+                <span data-text="menu.collectables_value">Стоимость</span>: $364.50
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="lost-necklaces">
+            <img class="icon" src="./icon/lost-necklaces.png" />
+            <span data-text="menu.lost_necklaces">Потерянные драг. ожерелья</span>
+            <div class="open-submenu"></div>
+        </div>
+        <div class="menu-hidden" data-type="lost-necklaces">
+            <p class="collection-value">
+                <span data-text="menu.collectables_value">Стоимость</span>: $335.00
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="lost-ring">
+            <img class="icon" src="./icon/lost-ring.png" />
+            <span data-text="menu.lost_ring">Потерянные драг. кольца</span>
+            <div class="open-submenu"></div>
+        </div>
+        <div class="menu-hidden" data-type="lost-ring">
+            <p class="collection-value">
+                <span data-text="menu.collectables_value">Стоимость</span>: $378.00
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="card-cups">
+            <img class="icon" src="./icon/card-cups.png" />
+            <span data-text="menu.card_cups">Карты Таро - Кубки</span>
+            <div class="open-submenu"></div>
+        </div>
+        <div class="menu-hidden" data-type="card-cups">
+            <p class="collection-value">
+                <span data-text="menu.collectables_value">Стоимость</span>: $240.50
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="card-pentacles">
+            <img class="icon" src="./icon/card-pentacles.png" />
+            <span data-text="menu.card_pentacles">Карты Таро - Пентакли</span>
+            <div class="open-submenu"></div>
+        </div>
+        <div class="menu-hidden" data-type="card-pentacles">
+            <p class="collection-value">
+                <span data-text="menu.collectables_value">Стоимость</span>: $287.00
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="card-swords">
+            <img class="icon" src="./icon/card-swords.png" />
+            <span data-text="menu.card_swords">Карты Таро - Мечи</span>
+            <div class="open-submenu"></div>
+        </div>
+        <div class="menu-hidden" data-type="card-swords">
+            <p class="collection-value">
+                <span data-text="menu.collectables_value">Стоимость</span>: $286.50
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="card-wands">
+            <img class="icon" src="./icon/card-wands.png" />
+            <span data-text="menu.card_wands">Карты Таро - Жезлы</span>
+            <div class="open-submenu"></div>
+        </div>
+        <div class="menu-hidden" data-type="card-wands">
+            <p class="collection-value">
+                <span data-text="menu.collectables_value">Стоимость</span>: $239.00
+            </p>
+        </div>
+    </div>
+    <h2 data-text="menu.utils">Доп. метки</h2>
+    <div class="menu-option clickable" data-type="nazar">
+        <img class="icon" src="./icon/nazar.png" />
+        <span data-text="madam_nazar.name">Мадам Назар</span>
+    </div>
+    <div class="menu-option clickable" data-type="fast-travel">
+        <img class="icon" src="./icon/fast-travel.png" />
+        <span data-text="menu.fast_travel">Быстрое перемещение</span>
+    </div>
+
+    <div class="search-container">
+        <h2 data-text="menu.search">Поиск</h2>
+        <input class="input-search" type="text" id="search" placeholder="введите наименование предмета" autocomplete="off">
+    </div>
+
+    <div class="settings-container">
+        <h2 data-text="menu.settings">Настройки</h2>
+        <div class="input-container">
+            <label for="day" data-text="menu.day">День</label>
+            <input id="day" class="input-day" type="number" min="1" max="3">
+        </div>
+        <div class="input-container">
+            <label for="tools" data-text="menu.tool_type">Тип снаряж.</label>
+            <select class="input-day" id="tools">
+                <option value="0" data-text="menu.tool_type.no_tools">Без снаряж.</option>
+                <option value="1" data-text="menu.tool_type.shovel">Лопата</option>
+                <option value="2" data-text="menu.tool_type.metal_detector">Металлоискатель</option>
+                <option value="3" data-text="menu.tool_type.all" selected>Все виды</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="tools" data-text="menu.language">Язык</label>
+            <select class="input-day" id="language">
+                <option value="en-us" selected>English</option>
+				<option value="ru">Русский</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="routes" data-text="menu.enable_route">Показать маршруты</label>
+            <select class="input-day" id="routes">
+                <option value="1" data-text="menu.yes">Да</option>
+                <option value="0" data-text="menu.no" selected>Нет</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="show-coordinates" data-text="menu.show_coords">Показывать коорд.</label>
+            <select class="input-day" id="show-coordinates">
+                <option value="1" data-text="menu.yes">Да</option>
+                <option value="0" data-text="menu.no" selected>Нет</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="reset-markers" data-text="menu.reset_markers_daily">Ежедневный сброс маркеров</label>
+            <select class="input-day" id="reset-markers">
+                <option value="true" data-text="menu.yes" selected>Да</option>
+                <option value="false" data-text="menu.no">Нет</option>
+                <option value="clear" data-text="menu.reset">Сброс сейчас</option>
+            </select>
+        </div>
+    </div>
+    <h2 data-text="menu.custom_routes">Ваши маршруты</h2>
+    <div class="custom-routes-container">
+        <a data-text="menu.import_route" href="javascript:void(0);" onclick="importCustomRoute()">Импорт маршрута</a>
+        <a data-text="menu.export_route" href="javascript:void(0);" onclick="exportCustomRoute()">Экспорт маршрута</a>
+    </div>
+    <div class="routes-container">
+        <div class="input-container">
+            <label for="custom-routes" data-text="menu.enable_custom_route">Задавать свои маршруты/label>
+            <select class="input-day" id="custom-routes">
+                <option value="1" data-text="menu.yes">Да</option>
+                <option value="0" data-text="menu.no" selected>Нет</option>
+                <option value="clear" data-text="menu.clear">Отчистить огнем</option>
+            </select>
+        </div>
+    </div>
+    <br>
+</div>
+<div class="menu-toggle">></div>
+
+<div class="timer-container">
+    <p id="countdown">--:--:--</p>
+</div>
+<div id="map"></div>
+<script src="assets/js/scripts.js?nocache=17"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-39999584-4');
+</script>
+
+</body>
+</html>

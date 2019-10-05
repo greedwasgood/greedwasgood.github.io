@@ -1,0 +1,851 @@
+[
+	{"key": "cups_ace.name", "value": "Туз кубков"},
+	{"key": "cups_ace_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=45s\">Смотреть видео</a>"},
+	{"key": "cups_ace_2.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=507s\">Смотреть видео</a>"},
+	{"key": "cups_ace_3.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=977s\">Смотреть видео</a>"},
+
+	{"key": "cups_two.name", "value": "Двойка кубков"},
+	{"key": "cups_two_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=78s\">Смотреть видео</a>"},
+	{"key": "cups_two_2.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=541s\">Смотреть видео</a>"},
+	{"key": "cups_two_3.desc", "value": "На тумбочке. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1007s\">Смотреть видео</a>"},
+
+	{"key": "cups_three.name", "value": "Тройка кубков"},
+	{"key": "cups_three_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=107s\">Смотреть видео</a>"},
+	{"key": "cups_three_2.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=580s\">Смотреть видео</a>"},
+	{"key": "cups_three_3.desc", "value": "На скамейке. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1044s\">Смотреть видео</a>"},
+
+	{"key": "cups_four.name", "value": "Четверка кубков"},
+	{"key": "cups_four_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=137s\">Смотреть видео</a>"},
+	{"key": "cups_four_2.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=612s\">Смотреть видео</a>"},
+	{"key": "cups_four_3.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1077s\">Смотреть видео</a>"},
+
+	{"key": "cups_five.name", "value": "Пятерка кубков"},
+	{"key": "cups_five_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=170s\">Смотреть видео</a>"},
+	{"key": "cups_five_2.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=645s\">Смотреть видео</a>"},
+	{"key": "cups_five_3.desc", "value": "На крыше здания. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1108s\">Смотреть видео</a>"},
+
+	{"key": "cups_six.name", "value": "Шестерка кубков"},
+	{"key": "cups_six_1.desc", "value": "Внутри на восточном подокойнике. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=201s\">Смотреть видео</a>"},
+	{"key": "cups_six_2.desc", "value": "На задней части фургона.<br/><a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=674s\">Смотреть видео</a>"},
+	{"key": "cups_six_3.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1149s\">Смотреть видео</a>"},
+
+	{"key": "cups_seven.name", "value": "Семерка кубков"},
+	{"key": "cups_seven_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=232s\">Смотреть видео</a>"},
+	{"key": "cups_seven_2.desc", "value": "В спальне на тумбочке за дверью. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=708s\">Смотреть видео</a>"},
+	{"key": "cups_seven_3.desc", "value": "Внутри дома в открытом шкафу. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1180s\">Смотреть видео</a>"},
+
+	{"key": "cups_eight.name", "value": "Восьмерка кубков"},
+	{"key": "cups_eight_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=265s\">Смотреть видео</a>"},
+	{"key": "cups_eight_2.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=743s\">Смотреть видео</a>"},
+	{"key": "cups_eight_3.desc", "value": "Внутри дома в книжном шкафу. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1215s\">Смотреть видео</a>"},
+
+	{"key": "cups_nine.name", "value": "Девятка кубков"},
+	{"key": "cups_nine_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=300s\">Смотреть видео</a>"},
+	{"key": "cups_nine_2.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=779s\">Смотреть видео</a>"},
+	{"key": "cups_nine_3.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1251s\">Смотреть видео</a>"},
+
+	{"key": "cups_ten.name", "value": "Десятка кубков"},
+	{"key": "cups_ten_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=333s\">Смотреть видео</a>"},
+	{"key": "cups_ten_2.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=808s\">Смотреть видео</a>"},
+	{"key": "cups_ten_3.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1284s\">Смотреть видео</a>"},
+
+	{"key": "cups_knight.name", "value": "Рыцарь кубков"},
+	{"key": "cups_knight_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=362s\">Смотреть видео</a>"},
+	{"key": "cups_knight_2.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=840s\">Смотреть видео</a>"},
+	{"key": "cups_knight_3.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1319s\">Смотреть видео</a>"},
+
+	{"key": "cups_page.name", "value": "Паж кубков"},
+	{"key": "cups_page_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=395s\">Смотреть видео</a>"},
+	{"key": "cups_page_2.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=871s\">Смотреть видео</a>"},
+	{"key": "cups_page_3.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1349s\">Смотреть видео</a>"},
+
+	{"key": "cups_queen.name", "value": "Королева кубков"},
+	{"key": "cups_queen_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=427s\">Смотреть видео</a>"},
+	{"key": "cups_queen_2.desc", "value": "Внутри шахты. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=903s\">Смотреть видео</a>"},
+	{"key": "cups_queen_3.desc", "value": "Внутри шахты на ящике рядом с фонарем. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1381s\">Смотреть видео</a>"},
+
+	{"key": "cups_king.name", "value": "Король кубков"},
+	{"key": "cups_king_1.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=460s\">Смотреть видео</a>"},
+	{"key": "cups_king_2.desc", "value": "<a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=933s\">Смотреть видео</a>"},
+	{"key": "cups_king_3.desc", "value": "Внутри пещеры. <a href=\"https://www.youtube.com/watch?v=PBpwf3ILgkM&list=PLQ3KzJPBsAHnkZT_DqKU0i3yd9mYAPfcG&t=1420s\">Смотреть видео</a>"},
+
+	{"key": "swords_ace.name", "value": "Туз мечей"},
+	{"key": "swords_ace_1.desc", "value": ""},
+	{"key": "swords_ace_2.desc", "value": "На подоконнике на верхнем этаже сарая."},
+	{"key": "swords_ace_3.desc", "value": ""},
+
+	{"key": "swords_two.name", "value": "Двойка мечей"},
+	{"key": "swords_two_1.desc", "value": ""},
+	{"key": "swords_two_2.desc", "value": ""},
+	{"key": "swords_two_3.desc", "value": "На ящиках рядом с фургоном."},
+
+	{"key": "swords_three.name", "value": "Тройка мечей"},
+	{"key": "swords_three_1.desc", "value": ""},
+	{"key": "swords_three_2.desc", "value": ""},
+	{"key": "swords_three_3.desc", "value": "В театральной палатке на стуле в первом ряду."},
+
+	{"key": "swords_four.name", "value": "Четверка мечей"},
+	{"key": "swords_four_1.desc", "value": ""},
+	{"key": "swords_four_2.desc", "value": ""},
+	{"key": "swords_four_3.desc", "value": ""},
+
+	{"key": "swords_five.name", "value": "Пятерка мечей"},
+	{"key": "swords_five_1.desc", "value": ""},
+	{"key": "swords_five_2.desc", "value": ""},
+	{"key": "swords_five_3.desc", "value": "За зданием на ящике."},
+
+	{"key": "swords_six.name", "value": "Шестерка мечей"},
+	{"key": "swords_six_1.desc", "value": ""},
+	{"key": "swords_six_2.desc", "value": ""},
+	{"key": "swords_six_3.desc", "value": "На вершине башни ветряной мельницы."},
+
+	{"key": "swords_seven.name", "value": "Семерка мечей"},
+	{"key": "swords_seven_1.desc", "value": "Рядом с голубой бочкой на юго-западном причале."},
+	{"key": "swords_seven_2.desc", "value": "В задней части фургона на зеленом ящике."},
+	{"key": "swords_seven_3.desc", "value": "Под навесом на скамейке."},
+
+	{"key": "swords_eight.name", "value": "Восьмерка мечей"},
+	{"key": "swords_eight_1.desc", "value": ""},
+	{"key": "swords_eight_2.desc", "value": ""},
+	{"key": "swords_eight_3.desc", "value": ""},
+
+	{"key": "swords_nine.name", "value": "Девятка мечей"},
+	{"key": "swords_nine_1.desc", "value": ""},
+	{"key": "swords_nine_2.desc", "value": ""},
+	{"key": "swords_nine_3.desc", "value": ""},
+
+	{"key": "swords_ten.name", "value": "Десятка мечей"},
+	{"key": "swords_ten_1.desc", "value": "На полке над крючками для одежды."},
+	{"key": "swords_ten_2.desc", "value": "Снаружи дома на ящиках с северо-восточной стороны."},
+	{"key": "swords_ten_3.desc", "value": ""},
+
+	{"key": "swords_knight.name", "value": "Рыцарь мечей"},
+	{"key": "swords_knight_1.desc", "value": ""},
+	{"key": "swords_knight_2.desc", "value": ""},
+	{"key": "swords_knight_3.desc", "value": "В лодке."},
+
+	{"key": "swords_page.name", "value": "Паж мечей"},
+	{"key": "swords_page_1.desc", "value": ""},
+	{"key": "swords_page_2.desc", "value": "На бревенчатой скамье с фонарем на ней."},
+	{"key": "swords_page_3.desc", "value": ""},
+
+	{"key": "swords_queen.name", "value": "Королева мечей"},
+	{"key": "swords_queen_1.desc", "value": ""},
+	{"key": "swords_queen_2.desc", "value": ""},
+	{"key": "swords_queen_3.desc", "value": "На маленьком журнальном столике."},
+
+	{"key": "swords_king.name", "value": "Король мечей"},
+	{"key": "swords_king_1.desc", "value": "На полке в магазине."},
+	{"key": "swords_king_2.desc", "value": ""},
+	{"key": "swords_king_3.desc", "value": ""},
+
+	{"key": "wands_ace.name", "value": "Туз жезлов"},
+	{"key": "wands_ace_1.desc", "value": ""},
+	{"key": "wands_ace_2.desc", "value": "Внутри дома на западном столе где много бутылок."},
+	{"key": "wands_ace_3.desc", "value": ""},
+
+	{"key": "wands_two.name", "value": "Двойка жезлов"},
+	{"key": "wands_two_1.desc", "value": ""},
+	{"key": "wands_two_2.desc", "value": ""},
+	{"key": "wands_two_3.desc", "value": "На стороне пирса."},
+
+	{"key": "wands_three.name", "value": "Тройка жезлов"},
+	{"key": "wands_three_1.desc", "value": "Снаружи на левой стороне дымохода."},
+	{"key": "wands_three_2.desc", "value": "В задней части кладбища на могиле Samantha Worth."},
+	{"key": "wands_three_3.desc", "value": ""},
+
+	{"key": "wands_four.name", "value": "Четверка жезлов"},
+	{"key": "wands_four_1.desc", "value": ""},
+	{"key": "wands_four_2.desc", "value": ""},
+	{"key": "wands_four_3.desc", "value": ""},
+
+	{"key": "wands_five.name", "value": "Пятерка жезлов"},
+	{"key": "wands_five_1.desc", "value": ""},
+	{"key": "wands_five_2.desc", "value": "На книжной полке на кухне."},
+	{"key": "wands_five_3.desc", "value": ""},
+
+	{"key": "wands_six.name", "value": "Шестерка жезлов"},
+	{"key": "wands_six_1.desc", "value": ""},
+	{"key": "wands_six_2.desc", "value": ""},
+	{"key": "wands_six_3.desc", "value": "На полке в задней комнате."},
+
+	{"key": "wands_seven.name", "value": "Семерка жезлов"},
+	{"key": "wands_seven_1.desc", "value": ""},
+	{"key": "wands_seven_2.desc", "value": "На столе на крыльце."},
+	{"key": "wands_seven_3.desc", "value": ""},
+
+	{"key": "wands_eight.name", "value": "Восьмерка жезлов"},
+	{"key": "wands_eight_1.desc", "value": ""},
+	{"key": "wands_eight_2.desc", "value": ""},
+	{"key": "wands_eight_3.desc", "value": ""},
+
+	{"key": "wands_nine.name", "value": "Девятка жезлов"},
+	{"key": "wands_nine_1.desc", "value": "Внутри шахты."},
+	{"key": "wands_nine_2.desc", "value": "Внутри шахты на бочке рядом с фонарем. <br/> <img src=\"https://i.imgur.com/HXbuCWi.png\" style=\"width: 200px;\">"},
+	{"key": "wands_nine_3.desc", "value": "На перилах плотины возле одного из колес."},
+
+	{"key": "wands_ten.name", "value": "Десятка жезлов"},
+	{"key": "wands_ten_1.desc", "value": ""},
+	{"key": "wands_ten_2.desc", "value": ""},
+	{"key": "wands_ten_3.desc", "value": "На разбитой телеге."},
+
+	{"key": "wands_knight.name", "value": "Рыцарь жезлов"},
+	{"key": "wands_knight_1.desc", "value": ""},
+	{"key": "wands_knight_2.desc", "value": ""},
+	{"key": "wands_knight_3.desc", "value": "На краю водоема."},
+
+	{"key": "wands_page.name", "value": "Паж жезлов"},
+	{"key": "wands_page_1.desc", "value": ""},
+	{"key": "wands_page_2.desc", "value": ""},
+	{"key": "wands_page_3.desc", "value": "Внутри пещеры."},
+
+	{"key": "wands_queen.name", "value": "Королева жезлов"},
+	{"key": "wands_queen_1.desc", "value": ""},
+	{"key": "wands_queen_2.desc", "value": "Внутри дома на таксидермическом столе. Нужно залезть в верхнее окно."},
+	{"key": "wands_queen_3.desc", "value": ""},
+
+	{"key": "wands_king.name", "value": "Король жезлов"},
+	{"key": "wands_king_1.desc", "value": ""},
+	{"key": "wands_king_2.desc", "value": "Внутри пещеры."},
+	{"key": "wands_king_3.desc", "value": "На корабле возле штурвала."},
+
+	{"key": "pentacles_ace.name", "value": "Туз пентаклей"},
+	{"key": "pentacles_ace_1.desc", "value": ""},
+	{"key": "pentacles_ace_2.desc", "value": ""},
+	{"key": "pentacles_ace_3.desc", "value": ""},
+
+	{"key": "pentacles_two.name", "value": "Двойка пентаклей"},
+	{"key": "pentacles_two_1.desc", "value": ""},
+	{"key": "pentacles_two_2.desc", "value": ""},
+	{"key": "pentacles_two_3.desc", "value": ""},
+
+	{"key": "pentacles_three.name", "value": "Тройка пентаклей"},
+	{"key": "pentacles_three_1.desc", "value": "За почтовым отделением на перилах наверху лестницы."},
+	{"key": "pentacles_three_2.desc", "value": ""},
+	{"key": "pentacles_three_3.desc", "value": ""},
+
+	{"key": "pentacles_four.name", "value": "Четверка пентаклей"},
+	{"key": "pentacles_four_1.desc", "value": "На краю колодца с закрытой крышкой. Берегитесь медведей!"},
+	{"key": "pentacles_four_2.desc", "value": ""},
+	{"key": "pentacles_four_3.desc", "value": "На каменной скамье."},
+
+	{"key": "pentacles_five.name", "value": "Пятерка пентаклей"},
+	{"key": "pentacles_five_1.desc", "value": ""},
+	{"key": "pentacles_five_2.desc", "value": ""},
+	{"key": "pentacles_five_3.desc", "value": ""},
+
+	{"key": "pentacles_six.name", "value": "Шестерка пентаклей"},
+	{"key": "pentacles_six_1.desc", "value": ""},
+	{"key": "pentacles_six_2.desc", "value": ""},
+	{"key": "pentacles_six_3.desc", "value": ""},
+
+	{"key": "pentacles_seven.name", "value": "Семерка пентаклей"},
+	{"key": "pentacles_seven_1.desc", "value": ""},
+	{"key": "pentacles_seven_2.desc", "value": ""},
+	{"key": "pentacles_seven_3.desc", "value": ""},
+
+	{"key": "pentacles_eight.name", "value": "Восьмерка пентаклей"},
+	{"key": "pentacles_eight_1.desc", "value": ""},
+	{"key": "pentacles_eight_2.desc", "value": ""},
+	{"key": "pentacles_eight_3.desc", "value": ""},
+
+	{"key": "pentacles_nine.name", "value": "Девятка пентаклей"},
+	{"key": "pentacles_nine_1.desc", "value": ""},
+	{"key": "pentacles_nine_2.desc", "value": "Внутри дома на столе."},
+	{"key": "pentacles_nine_3.desc", "value": ""},
+
+	{"key": "pentacles_ten.name", "value": "Десятка пентаклей"},
+	{"key": "pentacles_ten_1.desc", "value": ""},
+	{"key": "pentacles_ten_2.desc", "value": ""},
+	{"key": "pentacles_ten_3.desc", "value": ""},
+
+	{"key": "pentacles_knight.name", "value": "Рыцарь пентаклей"},
+	{"key": "pentacles_knight_1.desc", "value": ""},
+	{"key": "pentacles_knight_2.desc", "value": ""},
+	{"key": "pentacles_knight_3.desc", "value": ""},
+
+	{"key": "pentacles_page.name", "value": "Паж пентаклей"},
+	{"key": "pentacles_page_1.desc", "value": ""},
+	{"key": "pentacles_page_2.desc", "value": ""},
+	{"key": "pentacles_page_3.desc", "value": ""},
+
+	{"key": "pentacles_queen.name", "value": "Королева пентаклей"},
+	{"key": "pentacles_queen_1.desc", "value": "На скамейке между двумя камерами тюрьмы."},
+	{"key": "pentacles_queen_2.desc", "value": ""},
+	{"key": "pentacles_queen_3.desc", "value": ""},
+
+	{"key": "pentacles_king.name", "value": "Король пентаклей"},
+	{"key": "pentacles_king_1.desc", "value": ""},
+	{"key": "pentacles_king_2.desc", "value": ""},
+	{"key": "pentacles_king_3.desc", "value": ""},
+
+	{"key": "coin_gold_quarter.name", "value": "Золотая монета в 25 центов 1800 г."},
+	{"key": "coin_gold_quarter_1.desc", "value": "🧲 "},
+	{"key": "coin_gold_quarter_2.desc", "value": "🧲 "},
+	{"key": "coin_gold_quarter_3.desc", "value": "🧲 "},
+
+	{"key": "coin_draped_bust_silver_dollar.name", "value": "Серебряный доллар со Свободой 1798 г."},
+	{"key": "coin_draped_bust_silver_dollar_1.desc", "value": "🧲 "},
+	{"key": "coin_draped_bust_silver_dollar_2.desc", "value": "🧲 "},
+	{"key": "coin_draped_bust_silver_dollar_3.desc", "value": "🧲 "},
+
+	{"key": "coin_one_cent_token.name", "value": "Монета 1 цент 1787 г."},
+	{"key": "coin_one_cent_token_1.desc", "value": "🧲 "},
+	{"key": "coin_one_cent_token_2.desc", "value": "🧲 "},
+	{"key": "coin_one_cent_token_3.desc", "value": "🧲 "},	
+
+	{"key": "coin_silver_dollar.name", "value": "Серебряный доллар 1794 г."},
+	{"key": "coin_silver_dollar_1.desc", "value": "🧲 "},
+	{"key": "coin_silver_dollar_2.desc", "value": "🧲 "},
+	{"key": "coin_silver_dollar_3.desc", "value": "🧲 Внутри шахты в конце тоннеля."},
+
+	{"key": "coin_new_yorke_token.name", "value": "Нью-йорская монета 1700 г."},
+	{"key": "coin_new_yorke_token_1.desc", "value": "🧲 Внутри пещеры."},
+	{"key": "coin_new_yorke_token_2.desc", "value": "🧲 Рядом с двумя деревьями."},
+	{"key": "coin_new_yorke_token_3.desc", "value": "🧲 "},
+
+	{"key": "coin_five_dollar_bechtler.name", "value": "Монета Бехтлера в 5 долларов 1800 г. "},
+	{"key": "coin_five_dollar_bechtler_1.desc", "value": "🧲 "},
+	{"key": "coin_five_dollar_bechtler_2.desc", "value": "🧲 "},
+	{"key": "coin_five_dollar_bechtler_3.desc", "value": "🧲 "},
+
+	{"key": "coin_quarter.name", "value": "Монета в 25 центов 1792 г."},
+	{"key": "coin_quarter_1.desc", "value": "🧲 "},
+	{"key": "coin_quarter_2.desc", "value": "🧲 "},
+	{"key": "coin_quarter_3.desc", "value": "🧲 "},
+
+	{"key": "coin_gold_dollar_coin.name", "value": "Золотой доллар 1800 г."},
+	{"key": "coin_gold_dollar_coin_1.desc", "value": "🧲 "},
+	{"key": "coin_gold_dollar_coin_2.desc", "value": "🧲 Внутри пещеры под висячим фонарем. <br/> <img src=\"https://i.imgur.com/IM8CdaJ.png\" style=\"width: 200px;\">"},
+	{"key": "coin_gold_dollar_coin_3.desc", "value": "🧲 "},
+
+	{"key": "coin_nickel_coin.name", "value": "Монета в 5 центов 1792 г."},
+	{"key": "coin_nickel_coin_1.desc", "value": "🧲 "},
+	{"key": "coin_nickel_coin_2.desc", "value": "🧲 "},
+	{"key": "coin_nickel_coin_3.desc", "value": "🧲 "},
+
+	{"key": "coin_halfpenny.name", "value": "Полпенни 1796 г."},
+	{"key": "coin_halfpenny_1.desc", "value": "🧲 "},
+	{"key": "coin_halfpenny_2.desc", "value": "🧲 "},
+	{"key": "coin_halfpenny_3.desc", "value": "🧲 Под бельевой веревкой."},
+
+	{"key": "coin_half_eagle.name", "value": "Золотая монета в 5 долларов 1795 г."},
+	{"key": "coin_half_eagle_1.desc", "value": "🧲 "},
+	{"key": "coin_half_eagle_2.desc", "value": "🧲 Под бельевыми веревками."},
+	{"key": "coin_half_eagle_3.desc", "value": "🧲 "},
+
+	{"key": "coin_gold_eagle.name", "value": "Золотая монета в 10 долларов 1797 г."},
+	{"key": "coin_gold_eagle_1.desc", "value": "🧲 "},
+	{"key": "coin_gold_eagle_2.desc", "value": "🧲 "},
+	{"key": "coin_gold_eagle_3.desc", "value": "🧲 Западная сторона большой скалы."},
+
+	{"key": "coin_liberty_quarter.name", "value": "Монета в 25 центов со Свободой 1792 г."},
+	{"key": "coin_liberty_quarter_1.desc", "value": "🧲 "},
+	{"key": "coin_liberty_quarter_2.desc", "value": "🧲 "},
+	{"key": "coin_liberty_quarter_3.desc", "value": "🧲 За вывеской."},
+
+	{"key": "coin_half_dime.name", "value": "Серебряная монета в 5 центов 1800 г."},
+	{"key": "coin_half_dime_1.desc", "value": "🧲 "},
+	{"key": "coin_half_dime_2.desc", "value": "🧲 Под железнодорожным мостом в небольшом кювете."},
+	{"key": "coin_half_dime_3.desc", "value": "🧲 "},
+
+	{"key": "coin_penny.name", "value": "Пенни 1789 г."},
+	{"key": "coin_penny_1.desc", "value": "🧲 "},
+	{"key": "coin_penny_2.desc", "value": "🧲 "},
+	{"key": "coin_penny_3.desc", "value": "🧲 "},
+
+	{"key": "egg_spoonbill.name", "value": "Яйцо колпицы"},
+	{"key": "egg_spoonbill_1.desc", "value": ""},
+	{"key": "egg_spoonbill_2.desc", "value": ""},
+	{"key": "egg_spoonbill_3.desc", "value": "На дереве."},
+
+	{"key": "egg_heron.name", "value": "Яйцо цапли"},
+	{"key": "egg_heron_1.desc", "value": ""},
+	{"key": "egg_heron_2.desc", "value": ""},
+	{"key": "egg_heron_3.desc", "value": "На дереве."},
+
+	{"key": "egg_loon.name", "value": "Яйцо гагары"},
+	{"key": "egg_loon_1.desc", "value": ""},
+	{"key": "egg_loon_2.desc", "value": ""},
+	{"key": "egg_loon_3.desc", "value": ""},
+
+	{"key": "egg_eagle_1.name", "value": "Яйцо орла"},
+	{"key": "egg_eagle_1_1.desc", "value": "На дереве."},
+	{"key": "egg_eagle_1_2.desc", "value": ""},
+	{"key": "egg_eagle_1_3.desc", "value": "На дереве."},
+
+	{"key": "egg_eagle_2.name", "value": "Яйцо орла"},
+	{"key": "egg_eagle_2_1.desc", "value": ""},
+	{"key": "egg_eagle_2_2.desc", "value": "На большой елке"},
+	{"key": "egg_eagle_2_3.desc", "value": "На дереве."},
+
+	{"key": "egg_vulture.name", "value": "Яйцо грифа"},
+	{"key": "egg_vulture_1.desc", "value": ""},
+	{"key": "egg_vulture_2.desc", "value": ""},
+	{"key": "egg_vulture_3.desc", "value": "Внутри пня дерева."},
+
+	{"key": "egg_hawk_1.name", "value": "Яйцо ястреба"},
+	{"key": "egg_hawk_1_1.desc", "value": "На дереве."},
+	{"key": "egg_hawk_1_2.desc", "value": "На дереве."},
+	{"key": "egg_hawk_1_3.desc", "value": ""},
+
+	{"key": "egg_hawk_2.name", "value": "Яйцо ястреба"},
+	{"key": "egg_hawk_2_1.desc", "value": ""},
+	{"key": "egg_hawk_2_2.desc", "value": "На дереве."},
+	{"key": "egg_hawk_2_3.desc", "value": ""},
+
+	{"key": "egg_egret.name", "value": "Яйцо белой цапли"},
+	{"key": "egg_egret_1.desc", "value": ""},
+	{"key": "egg_egret_2.desc", "value": ""},
+	{"key": "egg_egret_3.desc", "value": "На дереве."},
+
+	{"key": "egg_duck.name", "value": "Утиное яйцо"},
+	{"key": "egg_duck_1.desc", "value": "В гнезде на земле. Не наступай на него!"},
+	{"key": "egg_duck_2.desc", "value": ""},
+	{"key": "egg_duck_3.desc", "value": ""},
+
+	{"key": "egg_goose_1.name", "value": "Гусиное яйцо"},
+	{"key": "egg_goose_1_1.desc", "value": ""},
+	{"key": "egg_goose_1_2.desc", "value": ""},
+	{"key": "egg_goose_1_3.desc", "value": "В гнезде на земле. Не наступай на него!"},
+
+	{"key": "egg_goose_2.name", "value": "Гусиное яйцо"},
+	{"key": "egg_goose_2_1.desc", "value": ""},
+	{"key": "egg_goose_2_2.desc", "value": ""},
+	{"key": "egg_goose_2_3.desc", "value": ""},
+
+	{"key": "bottle_tennesee_whiskey.name", "value": "Теннессийский виски"},
+	{"key": "bottle_tennesee_whiskey_1.desc", "value": ""},
+	{"key": "bottle_tennesee_whiskey_2.desc", "value": ""},
+	{"key": "bottle_tennesee_whiskey_3.desc", "value": "В шкафу в гостиной."},
+
+	{"key": "bottle_irish_whiskey.name", "value": "Ирландский виски"},
+	{"key": "bottle_irish_whiskey_1.desc", "value": ""},
+	{"key": "bottle_irish_whiskey_2.desc", "value": ""},
+	{"key": "bottle_irish_whiskey_3.desc", "value": "Внутри на столе."},
+
+	{"key": "bottle_scotch_whisky.name", "value": "Шотландский виски"},
+	{"key": "bottle_scotch_whisky_1.desc", "value": ""},
+	{"key": "bottle_scotch_whisky_2.desc", "value": ""},
+	{"key": "bottle_scotch_whisky_3.desc", "value": ""},
+
+	{"key": "bottle_absinthe.name", "value": "Абсент"},
+	{"key": "bottle_absinthe_1.desc", "value": ""},
+	{"key": "bottle_absinthe_2.desc", "value": ""},
+	{"key": "bottle_absinthe_3.desc", "value": ""},
+
+	{"key": "bottle_gran_corazon_madeira.name", "value": "Мадейра Гран Коразон"},
+	{"key": "bottle_gran_corazon_madeira_1.desc", "value": ""},
+	{"key": "bottle_gran_corazon_madeira_2.desc", "value": ""},
+	{"key": "bottle_gran_corazon_madeira_3.desc", "value": ""},
+
+	{"key": "bottle_old_tom_gin.name", "value": "Джин Олд Том"},
+	{"key": "bottle_old_tom_gin_1.desc", "value": "Западная сторона дома в разбитом крыльце."},
+	{"key": "bottle_old_tom_gin_2.desc", "value": ""},
+	{"key": "bottle_old_tom_gin_3.desc", "value": "В шкафу с раковиной."},
+
+	{"key": "bottle_caribbean_rum.name", "value": "Карибский ром"},
+	{"key": "bottle_caribbean_rum_1.desc", "value": ""},
+	{"key": "bottle_caribbean_rum_2.desc", "value": ""},
+	{"key": "bottle_caribbean_rum_3.desc", "value": ""},
+
+	{"key": "bottle_cognac_bottle.name", "value": "Коньяк"},
+	{"key": "bottle_cognac_bottle_1.desc", "value": ""},
+	{"key": "bottle_cognac_bottle_2.desc", "value": ""},
+	{"key": "bottle_cognac_bottle_3.desc", "value": "В столе шерифа"},
+
+	{"key": "bottle_london_dry_gin.name", "value": "Лондонский сухой джин"},
+	{"key": "bottle_london_dry_gin_1.desc", "value": ""},
+	{"key": "bottle_london_dry_gin_2.desc", "value": "Внутри дерева."},
+	{"key": "bottle_london_dry_gin_3.desc", "value": "Внутри маяка."},
+
+	{"key": "arrowhead_rough.name", "value": "Неотделанный наконечник стрелы"},
+	{"key": "arrowhead_rough_1.desc", "value": ""},
+	{"key": "arrowhead_rough_2.desc", "value": ""},
+	{"key": "arrowhead_rough_3.desc", "value": ""},
+
+	{"key": "arrowhead_splintered.name", "value": "Расколотый наконечник стрелы"},
+	{"key": "arrowhead_splintered_1.desc", "value": ""},
+	{"key": "arrowhead_splintered_2.desc", "value": "Под мертвым деревом."},
+	{"key": "arrowhead_splintered_3.desc", "value": ""},
+
+	{"key": "arrowhead_crude.name", "value": "Грубо обработанный наконечник стрелы"},
+	{"key": "arrowhead_crude_1.desc", "value": ""},
+	{"key": "arrowhead_crude_2.desc", "value": "Между тремя деревьями на южной стороне дома."},
+	{"key": "arrowhead_crude_3.desc", "value": ""},
+
+	{"key": "arrowhead_chipped.name", "value": "Зазубренный наконечник стрелы"},
+	{"key": "arrowhead_chipped_1.desc", "value": ""},
+	{"key": "arrowhead_chipped_2.desc", "value": ""},
+	{"key": "arrowhead_chipped_3.desc", "value": ""},
+
+	{"key": "arrowhead_feldspar.name", "value": "Наконечник стрелы из полевого шпата"},
+	{"key": "arrowhead_feldspar_1.desc", "value": ""},
+	{"key": "arrowhead_feldspar_2.desc", "value": ""},
+	{"key": "arrowhead_feldspar_3.desc", "value": ""},
+
+	{"key": "arrowhead_slate.name", "value": "Сланцевый наконечник стрелы"},
+	{"key": "arrowhead_slate_1.desc", "value": ""},
+	{"key": "arrowhead_slate_2.desc", "value": "Внутри пещеры."},
+	{"key": "arrowhead_slate_3.desc", "value": "На южной стороне хлопкового поля."},
+
+	{"key": "arrowhead_bone.name", "value": "Костяной наконечник стрелы"},
+	{"key": "arrowhead_bone_1.desc", "value": ""},
+	{"key": "arrowhead_bone_2.desc", "value": ""},
+	{"key": "arrowhead_bone_3.desc", "value": ""},
+
+	{"key": "arrowhead_raw.name", "value": "Необработанный наконечник стрелы"},
+	{"key": "arrowhead_raw_1.desc", "value": ""},
+	{"key": "arrowhead_raw_2.desc", "value": ""},
+	{"key": "arrowhead_raw_3.desc", "value": ""},
+
+	{"key": "arrowhead_obsidian.name", "value": "Обсидиановый наконечник стрелы"},
+	{"key": "arrowhead_obsidian_1.desc", "value": "🧲 В середине рисунка мелом."},
+	{"key": "arrowhead_obsidian_2.desc", "value": "🧲 Рядом с пугалом на пшеничном поле."},
+	{"key": "arrowhead_obsidian_3.desc", "value": "🧲 "},
+
+	{"key": "arrowhead_quartz.name", "value": "Кварцевый наконечник стрелы"},
+	{"key": "arrowhead_quartz_1.desc", "value": "🧲 "},
+	{"key": "arrowhead_quartz_2.desc", "value": "🧲 Между большим деревом и скалой."},
+	{"key": "arrowhead_quartz_3.desc", "value": "🧲 "},
+
+	{"key": "arrowhead_flint.name", "value": "Кремневый наконечник стрелы"},
+	{"key": "arrowhead_flint_1.desc", "value": ""},
+	{"key": "arrowhead_flint_2.desc", "value": ""},
+	{"key": "arrowhead_flint_3.desc", "value": "Между поваленными деревьями"},
+
+	{"key": "arrowhead_agate.name", "value": "Агатовый наконечник стрелы"},
+	{"key": "arrowhead_agate_1.desc", "value": "🧲 "},
+	{"key": "arrowhead_agate_2.desc", "value": "🧲 "},
+	{"key": "arrowhead_agate_3.desc", "value": "🧲 Рядом с гейзером."},
+
+	{"key": "heirlooms_jade_hairpin.name", "value": "Нефритовая шпилька для волос"},
+	{"key": "heirlooms_jade_hairpin_1.desc", "value": "На Красной скамейке за домом."},
+	{"key": "heirlooms_jade_hairpin_2.desc", "value": "Рядом с могилой \"Landry\""},
+	{"key": "heirlooms_jade_hairpin_3.desc", "value": ""},
+
+	{"key": "heirlooms_cherrywood_comb.name", "value": "Гребень из вишни"},
+	{"key": "heirlooms_cherrywood_comb_1.desc", "value": ""},
+	{"key": "heirlooms_cherrywood_comb_2.desc", "value": ""},
+	{"key": "heirlooms_cherrywood_comb_3.desc", "value": ""},
+
+	{"key": "heirlooms_ebony_hairbrush.name", "value": "Щетка для волос из черного дерева"},
+	{"key": "heirlooms_ebony_hairbrush_1.desc", "value": ""},
+	{"key": "heirlooms_ebony_hairbrush_2.desc", "value": ""},
+	{"key": "heirlooms_ebony_hairbrush_3.desc", "value": ""},
+
+	{"key": "heirlooms_metal_hairpin.name", "value": "Металлическая шпилька для волос"},
+	{"key": "heirlooms_metal_hairpin_1.desc", "value": ""},
+	{"key": "heirlooms_metal_hairpin_2.desc", "value": ""},
+	{"key": "heirlooms_metal_hairpin_3.desc", "value": ""},
+
+	{"key": "heirlooms_carved_wooden.name", "value": "Резная деревянная шпилька для волос"},
+	{"key": "heirlooms_carved_wooden_1.desc", "value": ""},
+	{"key": "heirlooms_carved_wooden_2.desc", "value": ""},
+	{"key": "heirlooms_carved_wooden_3.desc", "value": "Между двумя мертвыми деревьями."},
+
+	{"key": "heirlooms_boxwood_comb.name", "value": "Гребень из самшита"},
+	{"key": "heirlooms_boxwood_comb_1.desc", "value": ""},
+	{"key": "heirlooms_boxwood_comb_2.desc", "value": "Внутри дома в высоком шкафу."},
+	{"key": "heirlooms_boxwood_comb_3.desc", "value": ""},
+
+	{"key": "heirlooms_goat_hair_brush.name", "value": "Щетка для волос из козьей щетины"},
+	{"key": "heirlooms_goat_hair_brush_1.desc", "value": ""},
+	{"key": "heirlooms_goat_hair_brush_2.desc", "value": ""},
+	{"key": "heirlooms_goat_hair_brush_3.desc", "value": "В сундуке на нижней палубе корабля."},
+
+	{"key": "heirlooms_ebony_hairpin.name", "value": "Шпилька для волос из черного дерева"},
+	{"key": "heirlooms_ebony_hairpin_1.desc", "value": ""},
+	{"key": "heirlooms_ebony_hairpin_2.desc", "value": "За большим домом."},
+	{"key": "heirlooms_ebony_hairpin_3.desc", "value": "На скамейке."},
+
+	{"key": "heirlooms_ivory_hairpin.name", "value": "Шпилька для волос из слоновой кости"},
+	{"key": "heirlooms_ivory_hairpin_1.desc", "value": ""},
+	{"key": "heirlooms_ivory_hairpin_2.desc", "value": "На маленькой синей тумбочке."},
+	{"key": "heirlooms_ivory_hairpin_3.desc", "value": ""},
+
+	{"key": "heirlooms_rosewood_hairbrush.name", "value": "Щетка для волос из Палисандра"},
+	{"key": "heirlooms_rosewood_hairbrush_1.desc", "value": ""},
+	{"key": "heirlooms_rosewood_hairbrush_2.desc", "value": ""},
+	{"key": "heirlooms_rosewood_hairbrush_3.desc", "value": ""},
+
+	{"key": "heirlooms_tortoiseshell_comb.name", "value": "Черепаховый гребень"},
+	{"key": "heirlooms_tortoiseshell_comb_1.desc", "value": ""},
+	{"key": "heirlooms_tortoiseshell_comb_2.desc", "value": ""},
+	{"key": "heirlooms_tortoiseshell_comb_3.desc", "value": "В доме на хэш-таблице."},
+
+	{"key": "heirlooms_ivory_comb.name", "value": "Гребень из слоновой кости"},
+	{"key": "heirlooms_ivory_comb_1.desc", "value": ""},
+	{"key": "heirlooms_ivory_comb_2.desc", "value": ""},
+	{"key": "heirlooms_ivory_comb_3.desc", "value": ""},
+
+	{"key": "heirlooms_horse_hair_brush.name", "value": "Щетка для волос из конского волоса"},
+	{"key": "heirlooms_horse_hair_brush_1.desc", "value": ""},
+	{"key": "heirlooms_horse_hair_brush_2.desc", "value": ""},
+	{"key": "heirlooms_horse_hair_brush_3.desc", "value": "В зеленом шкафу рядом с камином."},
+
+	{"key": "heirlooms_boar_bristle_brush.name", "value": "Щетка доя волос из щетины кабана"},
+	{"key": "heirlooms_boar_bristle_brush_1.desc", "value": ""},
+	{"key": "heirlooms_boar_bristle_brush_2.desc", "value": ""},
+	{"key": "heirlooms_boar_bristle_brush_3.desc", "value": ""},
+
+	{"key": "heirlooms_new_guinea_rosewood.name", "value": "Щетка для волос из индийского сандала"},
+	{"key": "heirlooms_new_guinea_rosewood_1.desc", "value": ""},
+	{"key": "heirlooms_new_guinea_rosewood_2.desc", "value": "В задней комнате на первом этаже. Комод с зеркалом."},
+	{"key": "heirlooms_new_guinea_rosewood_3.desc", "value": ""},
+
+	{"key": "flower_texas_bluebonnet.name", "value": "Люпин техасский"},
+	{"key": "flower_texas_bluebonnet_1.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_2.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_3.desc", "value": ""},
+
+	{"key": "flower_bitterweed_1.name", "value": "Гелениум"},
+	{"key": "flower_bitterweed_1_1.desc", "value": ""},
+	{"key": "flower_bitterweed_1_2.desc", "value": ""},
+	{"key": "flower_bitterweed_1_3.desc", "value": ""},
+
+	{"key": "flower_bitterweed_2.name", "value": "Гелениум"},
+	{"key": "flower_bitterweed_2_1.desc", "value": ""},
+	{"key": "flower_bitterweed_2_2.desc", "value": ""},
+	{"key": "flower_bitterweed_2_3.desc", "value": ""},
+
+	{"key": "flower_agarita_1.name", "value": "Магония"},
+	{"key": "flower_agarita_1_1.desc", "value": "Растет ночью"},
+	{"key": "flower_agarita_1_2.desc", "value": "Растет ночью"},
+	{"key": "flower_agarita_1_3.desc", "value": "Растет ночью"},
+
+	{"key": "flower_agarita_2.name", "value": "Магония"},
+	{"key": "flower_agarita_2_1.desc", "value": "Растет ночью"},
+	{"key": "flower_agarita_2_2.desc", "value": "Растет ночью"},
+	{"key": "flower_agarita_2_3.desc", "value": "Растет ночью"},
+
+	{"key": "flower_wild_rhubarb.name", "value": "Ревень"},
+	{"key": "flower_wild_rhubarb_1.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_2.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_3.desc", "value": ""},
+
+	{"key": "flower_cardinal.name", "value": "Лобелия пурпурная"},
+	{"key": "flower_cardinal_1.desc", "value": ""},
+	{"key": "flower_cardinal_2.desc", "value": ""},
+	{"key": "flower_cardinal_3.desc", "value": ""},
+
+	{"key": "flower_creek_plum.name", "value": "Слива поручейная"},
+	{"key": "flower_creek_plum_1.desc", "value": ""},
+	{"key": "flower_creek_plum_2.desc", "value": ""},
+	{"key": "flower_creek_plum_3.desc", "value": ""},
+
+	{"key": "flower_blood_flower_1.name", "value": "Ваточник"},
+	{"key": "flower_blood_flower_1_1.desc", "value": "Растет ночью"},
+	{"key": "flower_blood_flower_1_2.desc", "value": "Растет ночью"},
+	{"key": "flower_blood_flower_1_3.desc", "value": "Растет ночью"},
+
+	{"key": "flower_blood_flower_2.name", "value": "Ваточник"},
+	{"key": "flower_blood_flower_2_1.desc", "value": "Растет ночью"},
+	{"key": "flower_blood_flower_2_2.desc", "value": "Растет ночью"},
+	{"key": "flower_blood_flower_2_3.desc", "value": "Растет ночью"},
+
+	{"key": "flower_chocolate_daisy.name", "value": "Берландиера"},
+	{"key": "flower_chocolate_daisy_1.desc", "value": ""},
+	{"key": "flower_chocolate_daisy_2.desc", "value": ""},
+	{"key": "flower_chocolate_daisy_3.desc", "value": ""},
+
+	{"key": "flower_wisteria.name", "value": "Глициния"},
+	{"key": "flower_wisteria_1.desc", "value": ""},
+	{"key": "flower_wisteria_2.desc", "value": ""},
+	{"key": "flower_wisteria_3.desc", "value": ""},
+
+	{"key": "ring_harland_coral.name", "value": "Кольцо с кораллом Гарланд"},
+	{"key": "ring_harland_coral_1.desc", "value": "🧲 "},
+	{"key": "ring_harland_coral_2.desc", "value": "В сейфе в замерзшем водопаде."},
+	{"key": "ring_harland_coral_3.desc", "value": "У подножия мертвого дерева."},
+
+	{"key": "ring_magnate_turquoise.name", "value": "Кольцо с бирюзой Магнат"},
+	{"key": "ring_magnate_turquoise_1.desc", "value": "Внутри дымохода."},
+	{"key": "ring_magnate_turquoise_2.desc", "value": ""},
+	{"key": "ring_magnate_turquoise_3.desc", "value": ""},
+
+	{"key": "ring_pilgrim_moonstone.name", "value": "Кольцо Пилигрим из лунного камня"},
+	{"key": "ring_pilgrim_moonstone_1.desc", "value": ""},
+	{"key": "ring_pilgrim_moonstone_2.desc", "value": "Внутри дома. Залезайте на дерево, чтобы попасть внутрь. Берегитесь стаи волков."},
+	{"key": "ring_pilgrim_moonstone_3.desc", "value": "🧲"},
+
+	{"key": "ring_bonnard_pearl.name", "value": "Кольцо с жемчугом Боннар"},
+	{"key": "ring_bonnard_pearl_1.desc", "value": "Внутри дымохода."},
+	{"key": "ring_bonnard_pearl_2.desc", "value": "🧲 "},
+	{"key": "ring_bonnard_pearl_3.desc", "value": ""},
+
+	{"key": "ring_banais_topaz.name", "value": "Кольцо с топазом Банэ"},
+	{"key": "ring_banais_topaz_1.desc", "value": ""},
+	{"key": "ring_banais_topaz_2.desc", "value": ""},
+	{"key": "ring_banais_topaz_3.desc", "value": "Внутри птичьего гнезда рядом с колоколом."},
+
+	{"key": "ring_beaulieux_diamond.name", "value": "Кольцо с бриллиантом Болье"},
+	{"key": "ring_beaulieux_diamond_1.desc", "value": "🧲 Рядом с гниющим деревом."},
+	{"key": "ring_beaulieux_diamond_2.desc", "value": "В сейфе чуть ниже моста."},
+	{"key": "ring_beaulieux_diamond_3.desc", "value": "Внутри дымохода."},
+
+	{"key": "ring_yates_diamond.name", "value": "Кольцо с бриллиантом Йейтс"},
+	{"key": "ring_yates_diamond_1.desc", "value": "🧲 "},
+	{"key": "ring_yates_diamond_2.desc", "value": ""},
+	{"key": "ring_yates_diamond_3.desc", "value": ""},
+
+	{"key": "ring_aubrey_onyx.name", "value": "Кольцо с ониксом Обри"},
+	{"key": "ring_aubrey_onyx_1.desc", "value": "🧲 "},
+	{"key": "ring_aubrey_onyx_2.desc", "value": ""},
+	{"key": "ring_aubrey_onyx_3.desc", "value": "🧲 "},
+
+	{"key": "ring_bosque_emerald.name", "value": "Кольцо с изумрудом Боск"},
+	{"key": "ring_bosque_emerald_1.desc", "value": "🧲 Между кустами на небольшой поляне."},
+	{"key": "ring_bosque_emerald_2.desc", "value": "🧲 "},
+	{"key": "ring_bosque_emerald_3.desc", "value": "🧲 "},
+
+	{"key": "ring_sackville_diamond.name", "value": "Кольцо с бриллиантом Сэквилл"},
+	{"key": "ring_sackville_diamond_1.desc", "value": ""},
+	{"key": "ring_sackville_diamond_2.desc", "value": "Трудный подъем! <a href=\"https://www.youtube.com/watch?v=7RV2qm90UaU&t=684s\">Watch video</a>"},
+	{"key": "ring_sackville_diamond_3.desc", "value": "Внутри дымохода."},
+
+	{"key": "ring_thorburn_turquoise.name", "value": "Кольцо с бирюзой Торберн"},
+	{"key": "ring_thorburn_turquoise_1.desc", "value": ""},
+	{"key": "ring_thorburn_turquoise_2.desc", "value": ""},
+	{"key": "ring_thorburn_turquoise_3.desc", "value": ""},
+
+	{"key": "necklace_blakely_miniatue.name", "value": "Миниатюрное ожерелье Блейкли"},
+	{"key": "necklace_blakely_miniatue_1.desc", "value": ""},
+	{"key": "necklace_blakely_miniatue_2.desc", "value": "Внутри гробницы викингов."},
+	{"key": "necklace_blakely_miniatue_3.desc", "value": "🧲 "},
+
+	{"key": "necklace_richelieu_amethyst.name", "value": "Аметистовое ожерелье Ришелье"},
+	{"key": "necklace_richelieu_amethyst_1.desc", "value": "В сейфе старой лачуги."},
+	{"key": "necklace_richelieu_amethyst_2.desc", "value": ""},
+	{"key": "necklace_richelieu_amethyst_3.desc", "value": ""},
+
+	{"key": "necklace_pelle_pearl.name", "value": "Жемчужное ожерелье Пелле"},
+	{"key": "necklace_pelle_pearl_1.desc", "value": "🧲 "},
+	{"key": "necklace_pelle_pearl_2.desc", "value": "🧲 "},
+	{"key": "necklace_pelle_pearl_3.desc", "value": ""},
+
+	{"key": "necklace_ainsworth_cross.name", "value": "Ожерелье с распятием Эйнсворт"},
+	{"key": "necklace_ainsworth_cross_1.desc", "value": ""},
+	{"key": "necklace_ainsworth_cross_2.desc", "value": "🧲 "},
+	{"key": "necklace_ainsworth_cross_3.desc", "value": ""},
+
+	{"key": "necklace_braxton_amethyst.name", "value": "Аметистовое ожерелье Брэкстон"},
+	{"key": "necklace_braxton_amethyst_1.desc", "value": ""},
+	{"key": "necklace_braxton_amethyst_2.desc", "value": ""},
+	{"key": "necklace_braxton_amethyst_3.desc", "value": ""},
+
+	{"key": "necklace_rou_pearl.name", "value": "Жемчужное ожерелье Роу"},
+	{"key": "necklace_rou_pearl_1.desc", "value": "Внутри дымохода."},
+	{"key": "necklace_rou_pearl_2.desc", "value": "🧲 "},
+	{"key": "necklace_rou_pearl_3.desc", "value": "🧲 Внутри пещеры."},
+
+	{"key": "necklace_gosselin_white_gold.name", "value": "Золотое колье Госселин"},
+	{"key": "necklace_gosselin_white_gold_1.desc", "value": "🧲 "},
+	{"key": "necklace_gosselin_white_gold_2.desc", "value": ""},
+	{"key": "necklace_gosselin_white_gold_3.desc", "value": ""},
+
+	{"key": "necklace_dane_topaz.name", "value": "Топазовое ожерелье Датчанин"},
+	{"key": "necklace_dane_topaz_1.desc", "value": "Внутри дымохода."},
+	{"key": "necklace_dane_topaz_2.desc", "value": "🧲 "},
+	{"key": "necklace_dane_topaz_3.desc", "value": "🧲 "},
+
+	{"key": "necklace_tuamotu_pearl.name", "value": "Ожерелье из черного жемчуга Туамоту"},
+	{"key": "necklace_tuamotu_pearl_1.desc", "value": "🧲 "},
+	{"key": "necklace_tuamotu_pearl_2.desc", "value": "🧲 "},
+	{"key": "necklace_tuamotu_pearl_3.desc", "value": ""},
+
+	{"key": "earring_ursula_citrine.name", "value": "Серьги с цитрином Урсула"},
+	{"key": "earring_ursula_citrine_1.desc", "value": ""},
+	{"key": "earring_ursula_citrine_2.desc", "value": "🧲 "},
+	{"key": "earring_ursula_citrine_3.desc", "value": "🧲 "},
+
+	{"key": "earring_royal_victoria.name", "value": "Серьги с бриллиантами Королева Виктория"},
+	{"key": "earring_royal_victoria_1.desc", "value": "🧲 "},
+	{"key": "earring_royal_victoria_2.desc", "value": ""},
+	{"key": "earring_royal_victoria_3.desc", "value": "🧲 "},
+
+	{"key": "earring_calumet_turquoise.name", "value": "Серьги с бирюзой Калюмет"},
+	{"key": "earring_calumet_turquoise_1.desc", "value": "🧲 "},
+	{"key": "earring_calumet_turquoise_2.desc", "value": "🧲 "},
+	{"key": "earring_calumet_turquoise_3.desc", "value": ""},
+
+	{"key": "earring_orchidee_diamond.name", "value": "Серьги с бриллиантами Орхидея"},
+	{"key": "earring_orchidee_diamond_1.desc", "value": "🧲 "},
+	{"key": "earring_orchidee_diamond_2.desc", "value": ""},
+	{"key": "earring_orchidee_diamond_3.desc", "value": "🧲 Позади водопада."},
+
+	{"key": "earring_sterling_tooth.name", "value": "Серьги с серебряными зубамы"},
+	{"key": "earring_sterling_tooth_1.desc", "value": ""},
+	{"key": "earring_sterling_tooth_2.desc", "value": "🧲 "},
+	{"key": "earring_sterling_tooth_3.desc", "value": "🧲 "},
+
+	{"key": "earring_harford_garnet.name", "value": "Серьги с гранатом Гарфорд"},
+	{"key": "earring_harford_garnet_1.desc", "value": "🧲 На западной стороне большой скалы."},
+	{"key": "earring_harford_garnet_2.desc", "value": "🧲 Между деревом и большим камнем."},
+	{"key": "earring_harford_garnet_3.desc", "value": ""},
+
+	{"key": "earring_duchess_emerald.name", "value": "Серьги с изумрудами Герцогиня"},
+	{"key": "earring_duchess_emerald_1.desc", "value": "🧲 "},
+	{"key": "earring_duchess_emerald_2.desc", "value": "Inside a lockbox in the alcove."},
+	{"key": "earring_duchess_emerald_3.desc", "value": ""},
+
+	{"key": "earring_beauchene_ruby.name", "value": "Серьги с рубинами Бошен"},
+	{"key": "earring_beauchene_ruby_1.desc", "value": "🧲 "},
+	{"key": "earring_beauchene_ruby_2.desc", "value": "🧲 "},
+	{"key": "earring_beauchene_ruby_3.desc", "value": "🧲 На западной стороне острова возле куста."},
+
+	{"key": "earring_endicott_diamond.name", "value": "Серьги с бриллиантами Эндикотт"},
+	{"key": "earring_endicott_diamond_1.desc", "value": "🧲 "},
+	{"key": "earring_endicott_diamond_2.desc", "value": "🧲 Перед южной могилой \"John Doe\"."},
+	{"key": "earring_endicott_diamond_3.desc", "value": "🧲 between the rocks."},
+
+	{"key": "earring_josephine_pearl.name", "value": "Серьги с жемчугом Жозефина"},
+	{"key": "earring_josephine_pearl_1.desc", "value": "Внутри пещеры. Вход: над \"А\" Аннесберга."},
+	{"key": "earring_josephine_pearl_2.desc", "value": ""},
+	{"key": "earring_josephine_pearl_3.desc", "value": "🧲 Underneath the bridge."},
+
+	{"key": "earring_emmeline_coral.name", "value": "Серьги с кораллом Эммелин"},
+	{"key": "earring_emmeline_coral_1.desc", "value": "🧲 "},
+	{"key": "earring_emmeline_coral_2.desc", "value": "🧲 "},
+	{"key": "earring_emmeline_coral_3.desc", "value": ""},
+
+	{"key": "bracelet_greco_sapphire.name", "value": "Браслет с сапфиром Греко"},
+	{"key": "bracelet_greco_sapphire_1.desc", "value": "Внутри дымохода."},
+	{"key": "bracelet_greco_sapphire_2.desc", "value": "🧲 "},
+	{"key": "bracelet_greco_sapphire_3.desc", "value": "🧲 "},
+
+	{"key": "bracelet_abello_ruby_bangle.name", "value": "Браслет с рубинами Абейо"},
+	{"key": "bracelet_abello_ruby_bangle_1.desc", "value": ""},
+	{"key": "bracelet_abello_ruby_bangle_2.desc", "value": "🧲 "},
+	{"key": "bracelet_abello_ruby_bangle_3.desc", "value": ""},
+
+	{"key": "bracelet_ojeda_rose_gold.name", "value": "Браслет из розового золота Охеда"},
+	{"key": "bracelet_ojeda_rose_gold_1.desc", "value": ""},
+	{"key": "bracelet_ojeda_rose_gold_2.desc", "value": ""},
+	{"key": "bracelet_ojeda_rose_gold_3.desc", "value": "🧲 "},
+
+	{"key": "bracelet_helena_sapphire.name", "value": "Браслет с сапфирами Хелена"},
+	{"key": "bracelet_helena_sapphire_1.desc", "value": ""},
+	{"key": "bracelet_helena_sapphire_2.desc", "value": "В сундуке за водопадом."},
+	{"key": "bracelet_helena_sapphire_3.desc", "value": "В сейфе рядом с большим камнем."},
+
+	{"key": "bracelet_durant_pearl.name", "value": "Браслет с жемчугом Дюран"},
+	{"key": "bracelet_durant_pearl_1.desc", "value": ""},
+	{"key": "bracelet_durant_pearl_2.desc", "value": "Внутри дымохода."},
+	{"key": "bracelet_durant_pearl_3.desc", "value": "На маленьком острове в большом сундуке."},
+
+	{"key": "bracelet_infanta_turquoise.name", "value": "Браслет с бирюзой Инфанта"},
+	{"key": "bracelet_infanta_turquoise_1.desc", "value": "🧲 Возле скалы с левой стороны от входа в туннель."},
+	{"key": "bracelet_infanta_turquoise_2.desc", "value": ""},
+	{"key": "bracelet_infanta_turquoise_3.desc", "value": "🧲 "},
+
+	{"key": "bracelet_elliston_carved.name", "value": "Фигурный браслет Эллистон"},
+	{"key": "bracelet_elliston_carved_1.desc", "value": "🧲 "},
+	{"key": "bracelet_elliston_carved_2.desc", "value": "🧲 "},
+	{"key": "bracelet_elliston_carved_3.desc", "value": "🧲 "},
+
+	{"key": "bracelet_hajnal_garnet_bangle.name", "value": "Браслет с гранатами Хайналь"},
+	{"key": "bracelet_hajnal_garnet_bangle_1.desc", "value": ""},
+	{"key": "bracelet_hajnal_garnet_bangle_2.desc", "value": ""},
+	{"key": "bracelet_hajnal_garnet_bangle_3.desc", "value": ""}
+]
