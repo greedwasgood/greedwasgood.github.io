@@ -65,7 +65,6 @@ function init()
 
     var defaultLayer = L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', { noWrap: true});
     var detailLayer = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', { noWrap: true});
-    var darkLayer = L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', { noWrap: true});
 
     // create the map
     map = L.map('map', {
