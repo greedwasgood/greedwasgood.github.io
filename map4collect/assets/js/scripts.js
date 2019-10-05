@@ -22,7 +22,7 @@ var customRouteConnections = [];
 var showCoordinates = false;
 
 var toolType = '3'; //All type of tools
-var avaliableLanguages = ['en-us'];
+var avaliableLanguages = ['ru','en-us'];
 var lang;
 var languageData = [];
 
@@ -51,7 +51,7 @@ function init()
         if(avaliableLanguages.includes(navigator.language.toLowerCase()))
             Cookies.set('language', navigator.language.toLowerCase());
         else
-            Cookies.set('language', 'en-us');
+            Cookies.set('language', 'ru');
     }
 
 
