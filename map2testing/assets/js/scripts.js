@@ -404,7 +404,7 @@ function addMarkerOnMap(value){
 
     switch (value.day) {
         case 'nazar':
-            tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']}</h1><p>  </p>`);
+            tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - 06.10 </h1><p>  </p>`);
             break;
         case 'fasttravel':
             tempMarker.bindPopup(`<h1>${languageData[value.text + '.name']}</h1><p>  </p>`);
