@@ -647,7 +647,7 @@
 	{"key": "heirlooms_horse_hair_brush_2.desc", "value": ""},
 	{"key": "heirlooms_horse_hair_brush_3.desc", "value": "В зеленом шкафу рядом с камином."},
 
-	{"key": "heirlooms_boar_bristle_brush.name", "value": "Щетка доя волос из щетины кабана"},
+	{"key": "heirlooms_boar_bristle_brush.name", "value": "Щетка для волос из щетины кабана"},
 	{"key": "heirlooms_boar_bristle_brush_1.desc", "value": ""},
 	{"key": "heirlooms_boar_bristle_brush_2.desc", "value": ""},
 	{"key": "heirlooms_boar_bristle_brush_3.desc", "value": ""},
@@ -837,7 +837,7 @@
 	{"key": "earring_orchidee_diamond_2.desc", "value": ""},
 	{"key": "earring_orchidee_diamond_3.desc", "value": "🧲 Позади водопада."},
 
-	{"key": "earring_sterling_tooth.name", "value": "Серьги с серебряными зубамы"},
+	{"key": "earring_sterling_tooth.name", "value": "Серьги с серебряными зубами"},
 	{"key": "earring_sterling_tooth_1.desc", "value": ""},
 	{"key": "earring_sterling_tooth_2.desc", "value": "🧲 "},
 	{"key": "earring_sterling_tooth_3.desc", "value": "🧲 "},
@@ -860,7 +860,7 @@
 	{"key": "earring_endicott_diamond.name", "value": "Серьги с бриллиантами Эндикотт"},
 	{"key": "earring_endicott_diamond_1.desc", "value": "🧲 "},
 	{"key": "earring_endicott_diamond_2.desc", "value": "🧲 Перед южной могилой \"John Doe\"."},
-	{"key": "earring_endicott_diamond_3.desc", "value": "🧲 between the rocks."},
+	{"key": "earring_endicott_diamond_3.desc", "value": "🧲 Между камнями."},
 
 	{"key": "earring_josephine_pearl.name", "value": "Серьги с жемчугом Жозефина"},
 	{"key": "earring_josephine_pearl_1.desc", "value": "Внутри пещеры. Вход: над \"А\" Аннесберга."},
