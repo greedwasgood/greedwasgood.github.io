@@ -43,6 +43,9 @@ var nazarLocations = [
     {"id":"12","x":"-124.03125","y":"34.171875"}
 ];
 
+var nazarCurrentLocation = 3; 
+var nazarCurrentDate = '09.10';
+
 var fastTravelLocations = [
     {"text": "fasttravel.tumbleweed", "x": "-109.3203125","y": "26.859375"},
     {"text": "fasttravel.armadillo", "x": "-104.375","y": "53.4140625"},
@@ -60,9 +63,6 @@ var fastTravelLocations = [
     {"text": "fasttravel.saint_denis", "x": "-86.328125","y": "152.6796875"},
     {"text": "fasttravel.lagras", "x": "-72.59375","y": "143.859375"}
 ];
-
-var nazarCurrentLocation = 3; 
-var nazarCurrentDate = '09.10';
 
 function init()
 {
