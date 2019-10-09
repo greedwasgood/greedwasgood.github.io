@@ -31,7 +31,7 @@ var languageData = [];
 var nazarLocations = [
     {"id":"1", "x":"-40.5625","y":"109.078125"},
     {"id":"2", "x":"-43","y":"132.828125"},
-    {"id":"3", "x":"36.75","y":"153.6875"},
+    {"id":"3", "x":"36.75","y":"153.6875"},             //большая долина
     {"id":"4", "x":"-56.171875","y":"78.59375"},
     {"id":"5", "x":"-63.6640625","y":"105.671875"},
     {"id":"6", "x":"-60.421875","y":"130.640625"},
@@ -61,8 +61,8 @@ var fastTravelLocations = [
     {"text": "fasttravel.lagras", "x": "-72.59375","y": "143.859375"}
 ];
 
-var nazarCurrentLocation = 8; 
-var nazarCurrentDate = '08.10';
+var nazarCurrentLocation = 3; 
+var nazarCurrentDate = '09.10';
 
 function init()
 {
