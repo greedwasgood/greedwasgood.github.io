@@ -43,8 +43,8 @@ var nazarLocations = [
     {"id":"12","x":"-124.03125","y":"34.171875"}        //Plantview, Rio Bravo
 ];
 
-var nazarCurrentLocation = 4;     //функция позиции id:(число)
-var nazarCurrentDate = '13.10';   //актуальная дата
+var nazarCurrentLocation = 7;     //функция позиции id:(число)
+var nazarCurrentDate = '14.10';   //актуальная дата
 
 var fastTravelLocations = [
     {"text": "fasttravel.tumbleweed", "x": "-109.3203125","y": "26.859375"},
