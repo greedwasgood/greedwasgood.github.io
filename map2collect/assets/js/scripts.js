@@ -172,14 +172,14 @@ function refreshMenu()
     });
 }
 
-function getNazarPosition()
+/*function getNazarPosition()
 {
     $.getJSON(`https://madam-nazar-location-api.herokuapp.com/current`, {}, function(x)
     {
         nazarCurrentLocation = x.data._id - 1;
         addNazarMarker();
     });
-}
+}*/
 
 function loadLanguage()
 {
