@@ -29,7 +29,7 @@ var lang;
 var languageData = [];
 
 var nazarLocations = [
-    {"id":"1", "x":"-40.5625","y":"109.078125"},        //Widow rock, Ambarino
+    {"id":"1", "x":"0","y":"0"},        //Widow rock, Ambarino
     {"id":"2", "x":"-43","y":"132.828125"},             //Moonstone pond, Ambarino (Хемиш)
     {"id":"3", "x":"-36.75","y":"153.6875"},            //Roanoke Ridge, New Hanower (Аннесберг)
     {"id":"4", "x":"-56.171875","y":"78.59375"},        //Big Valley, West Elizabeth
@@ -43,7 +43,7 @@ var nazarLocations = [
     {"id":"12","x":"-124.03125","y":"34.171875"}        //Plantview, Rio Bravo
 ];
 
-var nazarCurrentLocation = 7;     //функция позиции id:(число)
+var nazarCurrentLocation = -;     //функция позиции id:(число)
 var nazarCurrentDate = '22.10';   //актуальная дата
 
 var fastTravelLocations = [
