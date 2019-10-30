@@ -8,7 +8,7 @@ var resetMarkersDaily;
 var disableMarkers = [];
 var categories = [
     'american-flowers', 'antique-bottles', 'arrowhead', 'bird-eggs', 'coin', 'family-heirlooms', 'lost-bracelet',
-    'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands', 'nazar',
+    'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands',
     'fast-travel'
 ];
 var enabledTypes = categories;
@@ -404,9 +404,6 @@ function addMarkerOnMap(value){
     var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})});
 
     switch (value.day) {
-        case 'nazar':
-            tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - ${nazarCurrentDate}</h1><p>  </p>`);
-            break;
         case 'fasttravel':
             tempMarker.bindPopup(`<h1>${languageData[value.text + '.name']}</h1><p>  </p>`);
             break;
