@@ -63,7 +63,7 @@ function init()
     wikiLanguage['en-us'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)';
     wikiLanguage['fr-fr'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-Guide-d\'Utilisateur-(French)';
     wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)';
-	wikiLanguage['ru'] = 'https://bit.ly/2WniHk4';
+	wikiLanguage['ru'] = 'https://bit.ly/349tBMM';
 
     if(typeof $.cookie('removed-items') === 'undefined')
         $.cookie('removed-items', '', {expires: resetMarkersDaily ? 1 : 999});
