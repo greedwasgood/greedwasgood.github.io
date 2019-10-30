@@ -33,10 +33,6 @@ Map.init = function ()
         "Dark": mapLayers['Dark']
     };
 
-    L.control.zoom({
-        position:'bottomright'
-    }).addTo(baseMap);
-
     L.control.layers(baseMapsLayers).addTo(baseMap);
 
     baseMap.on('click', function (e)

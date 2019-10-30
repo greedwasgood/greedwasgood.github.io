@@ -83,11 +83,11 @@ function init()
         if(avaliableLanguages.includes(navigator.language.toLowerCase()))
             $.cookie('language', navigator.language.toLowerCase());
         else
-            $.cookie('language', 'en-us');
+            $.cookie('language', 'ru');
     }
 
     if(!avaliableLanguages.includes($.cookie('language')))
-        $.cookie('language', 'en-us');
+        $.cookie('language', 'ru');
 
     if(typeof $.cookie('removed-markers-daily') === 'undefined')
         $.cookie('removed-markers-daily', 'false', { expires: 999});
