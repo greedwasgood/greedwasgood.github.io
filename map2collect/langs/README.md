@@ -7,19 +7,23 @@ english (en-en.json)
   - iliggalodin
   - Rakmarok
   - rbcunhadesign
+  - Tiax
+  - sporb
+  - Senexis
   
 german (de-de.json)
   - flameango
   - Rakmarok
   
 spanish (es-es.json)
-  - no-one yet!
+  - glaseca
   
 french (fr-fr.json)
   - Nopitch
+  - Gromino
   
 italian (it-it.json)
-  - no-one yet!
+  - Raffox97
   
 japanese (ja.json)
   - no-one yet!
@@ -32,9 +36,13 @@ polish (pl.json)
   
 brazilian (pt-br.json)
   - jeanropke
+  - Vitor-Borba72
   
 russian (ru.json)
-  - no-one yet!
+  - Overnoes
+  - Korfeeeezy
+  - Asya
+  - Klinorin
   
 chinese simplified (zh-s.json)
   - yamazakitouma

@@ -1,7 +1,8 @@
 var day;
-var map;
+var baseMap;
 var markers = [];
 var markersLayer = new L.LayerGroup();
+
 var searchTerms = [];
 var visibleMarkers = [];
 var resetMarkersDaily;
@@ -9,249 +10,144 @@ var disableMarkers = [];
 var categories = [
     'american-flowers', 'antique-bottles', 'arrowhead', 'bird-eggs', 'coin', 'family-heirlooms', 'lost-bracelet',
     'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands', 'nazar',
-    'fast-travel'
+    'fast-travel', 'treasure', 'random'
 ];
+
+var plantsCategories = [
+    'texas_bluebonnet', 'bitterweed', 'agarita', 'wild_rhubarb', 'cardinal',
+    'creek_plum', 'blood_flower', 'chocolate_daisy', 'wisteria'
+];
+
+var plantsEnabled = plantsCategories;
+
 var enabledTypes = categories;
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
+
+var treasureData = [];
+var treasureMarkers = [];
+var treasureDisabled = [];
+var treasuresLayer = new L.LayerGroup();
 
 var routesData = [];
 var polylines;
 
 var customRouteEnabled = false;
-var customRoute = [];
 var customRouteConnections = [];
 
 var showCoordinates = false;
 
 var toolType = '3'; //All type of tools
-var avaliableLanguages = ['en-us', 'ru'];
+var avaliableLanguages = ['de-de', 'es-es', 'en-us', 'fr-fr', 'it-it', 'pt-br', 'pl', 'ru', 'zh-s', 'zh-t'];
 var lang;
 var languageData = [];
 
-var nazarLocations = [
-    {"id":"1", "x":"-40.5625","y":"109.078125"},        //Widow rock, Ambarino
-    {"id":"2", "x":"-43","y":"132.828125"},             //Moonstone pond, Ambarino (Хемиш)
-    {"id":"3", "x":"-36.75","y":"153.6875"},            //Roanoke Ridge, New Hanower (Аннесберг)
-    {"id":"4", "x":"-56.171875","y":"78.59375"},        //Big Valley, West Elizabeth
-    {"id":"5", "x":"-63.6640625","y":"105.671875"},     //Dacota river, New Hanower
-    {"id":"6", "x":"-60.421875","y":"130.640625"},      //Emerald Ranch, New Hanower
-    {"id":"7", "x":"-66.046875","y":"151.03125"},       //Bluewater Marsh, Lemoyne
-    {"id":"8", "x":"-84.4375","y":"82.03125"},          //Great plants, West Elizabeth
-    {"id":"9", "x":"-90.53125","y":"135.65625"},        //Bolger Glade, Lemoyne
-    {"id":"10","x":"-100.140625","y":"48.8125"},        //Cholla springs, New Austin
-    {"id":"11","x":"-105.0703125","y":"84.9765625"},    //Восток New Austin
-    {"id":"12","x":"-124.03125","y":"34.171875"}        //Plantview, Rio Bravo
-];
+var nazarLocations = [];
+var nazarCurrentLocation = 9;
+var nazarCurrentDate = '29th October';
 
-var nazarCurrentLocation = 10;     //функция позиции id:(число)
-var nazarCurrentDate = '19.10';   //актуальная дата
+var fastTravelData;
 
-var fastTravelLocations = [
-    {"text": "fasttravel.tumbleweed", "x": "-109.3203125","y": "26.859375"},
-    {"text": "fasttravel.armadillo", "x": "-104.375","y": "53.4140625"},
-    {"text": "fasttravel.macfarlanes", "x": "-101.515625","y": "72.4140625"},
-    {"text": "fasttravel.manzanita", "x": "-88.5859375","y": "80.7890625"},
-    {"text": "fasttravel.blackwater", "x": "-82.9140625","y": "99.765625"},
-    {"text": "fasttravel.strawberry", "x": "-70.03125","y": "84.296875"},
-    {"text": "fasttravel.valentine", "x": "-53.578125","y": "108.3828125"},
-    {"text": "fasttravel.colter", "x": "-25.9296875","y": "91.046875"},
-    {"text": "fasttravel.emerald", "x": "-56.7734375","y": "134.8203125"},
-    {"text": "fasttravel.rhodes", "x": "-83.6640625","y": "130.65625"},
-    {"text": "fasttravel.wapiti", "x": "-29.7265625","y": "118.7890625"},
-    {"text": "fasttravel.van_horn", "x": "-53.703125","y": "156.3203125"},
-    {"text": "fasttravel.annesburg", "x": "-43.46875","y": "156.765625"},
-    {"text": "fasttravel.saint_denis", "x": "-86.328125","y": "152.6796875"},
-    {"text": "fasttravel.lagras", "x": "-72.59375","y": "143.859375"}
-];
+var weeklySet = 'witch_set';
+var weeklySetData = [];
+var date;
+var nocache = 55;
+
+var wikiLanguage = [];
+
+var debugTool = null;
 
 function init()
 {
-    if(typeof Cookies.get('removed-items') === 'undefined')
-        Cookies.set('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
 
-    if(typeof Cookies.get('language') === 'undefined')
+    wikiLanguage['de-de'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Sammler-Landkarte-Benutzerhandbuch-(Deutsch)';
+    wikiLanguage['en-us'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)';
+    wikiLanguage['fr-fr'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-Guide-d\'Utilisateur-(French)';
+    wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)';
+
+    if(typeof $.cookie('removed-items') === 'undefined')
+        $.cookie('removed-items', '', {expires: resetMarkersDaily ? 1 : 999});
+
+    if(typeof $.cookie('removed-items-2') === 'undefined')
+        $.cookie('removed-items-2', '', {expires: resetMarkersDaily ? 1 : 999});
+
+
+    disableMarkers = ($.cookie('removed-items') + $.cookie('removed-items-2')).split(";");
+
+
+    if(typeof $.cookie('map-layer') === 'undefined')
+        $.cookie('map-layer', 'Detailed', { expires: 999 });
+
+    if(typeof $.cookie('language') === 'undefined')
     {
         if(avaliableLanguages.includes(navigator.language.toLowerCase()))
-            Cookies.set('language', navigator.language.toLowerCase());
+            $.cookie('language', navigator.language.toLowerCase());
         else
-            Cookies.set('language', 'ru');
+            $.cookie('language', 'en-us');
     }
 
-    if(!avaliableLanguages.includes(Cookies.get('language')))
-        Cookies.set('language', 'ru');
+    if(!avaliableLanguages.includes($.cookie('language')))
+        $.cookie('language', 'en-us');
 
-    if(typeof Cookies.get('removed-markers-daily') === 'undefined')
-        Cookies.set('removed-markers-daily', 'true', 999);
+    if(typeof $.cookie('removed-markers-daily') === 'undefined')
+        $.cookie('removed-markers-daily', 'false', { expires: 999});
 
-    resetMarkersDaily = Cookies.get('removed-markers-daily') == 'true';
+    resetMarkersDaily = $.cookie('removed-markers-daily') == 'true';
     $("#reset-markers").val(resetMarkersDaily.toString());
 
+    var curDate = new Date();
+    date = curDate.getUTCFullYear()+'-'+(curDate.getUTCMonth()+1)+'-'+curDate.getUTCDate();
 
 
-    lang = Cookies.get('language');
+
+    disableMarkers = disableMarkers.filter(function (el) {
+        return el != "";
+    });
+
+    lang = $.cookie('language');
     $("#language").val(lang);
 
-    disableMarkers = Cookies.get('removed-items').split(';');
 
-    var minZoom = 2;
-    var maxZoom = 7;
+    Language.load();
+    Language.setMenuLanguage();
+    Map.init();
 
-    var defaultLayer = L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', { noWrap: true});
-    var detailLayer = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', { noWrap: true});
+    setMapBackground($.cookie('map-layer'));
 
-    // create the map
-    map = L.map('map', {
-        minZoom: minZoom,
-        maxZoom: maxZoom,
-        zoomControl: false,
-        crs: L.CRS.Simple,
-        layers: [defaultLayer, detailLayer]
-    }).setView([-70, 111.75], 3);
 
-    var baseMaps = {
-        "Default": defaultLayer,
-        "Detailed": detailLayer,
-    };
-
-    L.control.layers(baseMaps).addTo(map);
-
-    map.on('click', function (e)
-    {
-        addCoordsOnMap(e);
-    });
-
-    map.on('popupopen', function()
-    {
-        $('.remove-button').click(function(e)
-        {
-            removeItemFromMap($(event.target).data("item"));
-        });
-    });
-
-    map.on('baselayerchange', function (e)
-    {
-        switch(e.name) {
-            default:
-            case 'Default':
-            case 'Detailed':
-                $('#map').css('background-color', '#d2b790');
-                break;
-        }
-    });
-
-    loadMarkers();
     setCurrentDayCycle();
-    loadRoutesData();
+    Routes.loadRoutesData();
+
+    //Overlay tests
     var pos = [-53.2978125, 68.7596875];
     var offset = 1.15;
-    L.imageOverlay('overlays/cave_01.png', [[pos], [pos[0] + offset, pos[1] + offset]]).addTo(map);
+    L.imageOverlay('./assets/overlays/cave_01.png', [[pos], [pos[0] + offset, pos[1] + offset]]).addTo(baseMap);
 
 }
 
-function refreshMenu()
-{
+function setMapBackground(mapName){
+    switch(mapName) {
+        default:
+        case 'Default':
+            $('#map').css('background-color', '#d2b790');
+            break;
 
-    $.each(categories, function (key, value)
-    {
-        $(`.menu-hidden[data-type=${value}]`).children('p.collectible').remove();
+        case 'Detailed':
+            $('#map').css('background-color', '#d2b790');
+            break;
 
-        markers.filter(function(item)
-        {
-            if(item.day == 1 && item.icon == value)
-            {
-                $(`.menu-hidden[data-type=${value}]`).append(`<p class="collectible" data-type="${item.text}">${languageData[item.text+'.name']}</p>`);
-            }
-        });
-    });
-    $.each(disableMarkers, function (key, value)
-    {
-        if(value.length > 0)
-        {
-            $('[data-type=' + value + ']').addClass('disabled');
-        }
-    });
-}
-
-function getNazarPosition()
-{
-    $.getJSON(`https://madam-nazar-location-api.herokuapp.com/current`, {}, function(x)
-    {
-        nazarCurrentLocation = x.data._id - 1;
-        addNazarMarker();
-    });
-}
-
-function loadLanguage()
-{
-    languageData = [];
-    $.getJSON(`langs/${lang}.json?nocache=4`, {}, function(data)
-    {
-        $.each(data, function(key, value) {
-            languageData[value.key] = value.value;
-
-        });
-        addMarkers();
-        setMenuLanguage();
-        refreshMenu();
-    });
-}
-
-function setMenuLanguage()
-{
-    $.each($('[data-text]'), function (key, value)
-    {
-        var temp = $(value);
-        if(languageData[temp.data('text')] == null) {
-            console.error(`[LANG][${lang}]: Text not found: '${temp.data('text')}'`);
-        }
-
-        $(temp).text(languageData[temp.data('text')]);
-    });
-
-    ///Special cases:
-    $('#search').attr("placeholder", languageData['menu.search_placeholder']);
-}
-
-function removeItemFromMap(itemName)
-{
-    if(disableMarkers.includes(itemName.toString()))
-    {
-        disableMarkers = $.grep(disableMarkers, function(value) {
-            $.each(routesData, function(key, j){
-                if (disableMarkers.includes(value.key)){
-                    delete value.hidden;
-                }
-            });
-            return value != itemName.toString();
-
-        });
-        $(visibleMarkers[itemName]._icon).css('opacity', '1');
-        $('[data-type=' + itemName + ']').removeClass('disabled');
-    }
-    else
-    {
-        disableMarkers.push(itemName.toString());
-        $.each(routesData[day], function(b, value){
-            if (disableMarkers.includes(value.key)){
-                value.hidden = true;
-            }
-        });
-        $(visibleMarkers[itemName]._icon).css('opacity', '0.35');
-        $('[data-type=' + itemName + ']').addClass('disabled');
+        case 'Dark':
+            $('#map').css('background-color', '#3d3d3d');
+            break;
     }
 
-    Cookies.set('removed-items', disableMarkers.join(';'), { expires: resetMarkersDaily ? 1 : 999});
-
-    if($("#routes").val() == 1)
-        drawLines();
-
+    $.cookie('map-layer', mapName, { expires: 999 });
 }
-
 function setCurrentDayCycle()
 {
     //day1: 2 4 6
     //day2: 0 3
     //day3: 1 5
+
     var weekDay = new Date().getUTCDay();
     switch(weekDay)
     {
@@ -275,265 +171,25 @@ function setCurrentDayCycle()
     $('#day').val(day);
 
     //Cookie day not exists? create
-    if(typeof Cookies.get('day') === 'undefined')
+    if(typeof $.cookie('date') === 'undefined')
     {
-        Cookies.set('day', day, { expires: 1 });
+        $.cookie('date', date, { expires: 2 });
     }
     //if exists, remove markers if the days arent the same
     else
     {
-        if(Cookies.get('day') != day.toString())
+        if($.cookie('date') != date.toString())
         {
-            Cookies.set('day', day, { expires: 1 });
+            $.cookie('date', date, { expires: 2 });
             if(resetMarkersDaily)
-                Cookies.set('removed-items', '', { expires: 1 });
-        }
-    }
-}
-
-function loadRoutesData()
-{
-
-    $.getJSON(`assets/routes/day_1.json`, {}, function (data) {
-        routesData[1] = data;
-    });
-    $.getJSON(`assets/routes/day_2.json`, {}, function (data) {
-        routesData[2] = data;
-    });
-    $.getJSON(`assets/routes/day_3.json`, {}, function (data) {
-        routesData[3] = data;
-    });
-
-
-}
-
-function drawLines()
-{
-    var connections = [];
-    for (var node of routesData[day]){
-        for (var marker of markers){
-            if (marker.text == node.key && marker.day ==day && !disableMarkers.includes(node.key) && enabledTypes.includes(marker.icon)){
-                var connection = [marker.x, marker.y]
-                connections.push(connection);
-            }
-        }
-    }
-    
-
-    if (polylines instanceof L.Polyline)
-    {
-        map.removeLayer(polylines);
-    }
-
-    polylines = L.polyline(connections, {'color': '#9a3033'});
-    map.addLayer(polylines);
-
-}
-
-
-function loadMarkers()
-{
-    markers = [];
-    $.getJSON("items.json?nocache=4", {}, function(data)
-    {
-        markers = data;
-        loadLanguage();
-
-        addNazarMarker();
-        addfastTravelMarker();
-
-    });
-
-}
-
-function addMarkers()
-{
-    markersLayer.clearLayers();
-
-    visibleMarkers = [];
-
-    $.each(markers, function (key, value)
-    {
-
-        if(value.tool != toolType && toolType !== "3")
-            return;
-
-        if(enabledTypes.includes(value.icon))
-        {
-            if (value.day == day || isNaN(value.day)) //if is not a number, will be nazar or fast travel
             {
-                if (languageData[value.text+'.name'] == null)
-                {
-                    console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
-                }
+                $.cookie('removed-items', '', {expires: 1});
+                $.cookie('removed-items-2', '', {expires: 1});
 
-                if (searchTerms.length > 0)
-                {
-                    $.each(searchTerms, function (id, term)
-                    {
-                        if (languageData[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
-                        {
-                            if (visibleMarkers[value.text] == null)
-                            {
-                                addMarkerOnMap(value);
-
-
-                                //not working as planned
-                                //if (languageData[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) == -1)
-                                //{
-                                //    $(tempMarker._icon).css({'filter': 'grayscale(1)', 'opacity': '0.4'});
-                                //}
-                            }
-                        }
-                    });
-                }
-                else {
-                    addMarkerOnMap(value);
-                }
-
+                disableMarkers = [];
             }
         }
-    });
-
-    markersLayer.addTo(map);
-
-    removeCollectedMarkers();
-}
-
-function addMarkerOnMap(value){
-    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})});
-
-    switch (value.day) {
-        case 'nazar':
-            tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - ${nazarCurrentDate}</h1><p>  </p>`);
-            break;
-        case 'fasttravel':
-            tempMarker.bindPopup(`<h1>${languageData[value.text + '.name']}</h1><p>  </p>`);
-            break;
-        default:
-            tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - ${languageData['menu.day']} ${value.day}</h1><p> ${languageData[value.text + '_' + value.day + '.desc']} </p><p class="remove-button" data-item="${value.text}">${languageData['map.remove_add']}</p>`).on('click', function() { addMarkerOnCustomRoute(value.text); });
-            break;
     }
-
-
-    visibleMarkers[value.text] = tempMarker;
-    markersLayer.addLayer(tempMarker);
-}
-
-function addMarkerOnCustomRoute(value)
-{
-    if(customRouteEnabled)
-    {
-        if(event.ctrlKey)
-            customRouteConnections.pop();
-        else
-            customRouteConnections.push(value);
-
-
-        var connections = [];
-
-        $.each(customRouteConnections, function (key, item)
-        {
-            connections.push(visibleMarkers[item]._latlng);
-        });
-
-
-        if (polylines instanceof L.Polyline)
-        {
-            map.removeLayer(polylines);
-        }
-
-        polylines = L.polyline(connections, {'color': '#9a3033'});
-        map.addLayer(polylines);
-
-    }
-
-
-}
-
-function removeCollectedMarkers()
-{
-
-    $.each(markers, function (key, value)
-    {
-        if(visibleMarkers[value.text] != null)
-        {
-            if (disableMarkers.includes(value.text.toString()))
-            {
-                $(visibleMarkers[value.text]._icon).css('opacity', '.35');
-            }
-            else
-            {
-                $(visibleMarkers[value.text]._icon).css('opacity', '1');
-            }
-        }
-    });
-}
-
-//loads the current location of Nazar and adds a marker in the correct location
-function addNazarMarker()
-{
-    markers.push({"text": "madam_nazar", "day": "nazar", "tool": "-1", "icon": "nazar", "x": nazarLocations[nazarCurrentLocation].x, "y": nazarLocations[nazarCurrentLocation].y});
-}
-//adds fasttravel points
-function addfastTravelMarker()
-{   
-    $.each(fastTravelLocations, function(b, value){
-        markers.push({"text": value.text, "day": "fasttravel", "tool": "-1", "icon": "fast-travel", "x": value.x, "y": value.y});
-
-    });
-}
-
-function customMarker(coords){
-    var nazarMarker = L.marker(coords, {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>debug</h1>`);
-    markersLayer.addLayer(nazarMarker);
-}
-
-function addCoordsOnMap(coords)
-{
-    // Show clicked coordinates (like google maps)
-    if (showCoordinates) {
-        if (document.querySelectorAll('.lat-lng-container').length < 1) {
-            var container = document.createElement('div');
-            var innerContainer = document.createElement('div');
-            var closeButton = document.createElement('button');
-            $(container).addClass('lat-lng-container').append(innerContainer);
-            $(closeButton).attr('id', 'lat-lng-container-close-button').html('&times;');
-            $(innerContainer).html('<p>lat: ' + coords.latlng.lat + '<br> lng: ' + coords.latlng.lng + '</p>').append(closeButton);
-
-            $('body').append(container);
-
-            $('#lat-lng-container-close-button').click(function() {
-                $(container).css({
-                    display: 'none',
-                })
-            })
-        } else {
-            $('.lat-lng-container').css({
-                display: '',
-            });
-            $('.lat-lng-container div p').html('lat: ' + coords.latlng.lat + '<br> lng: ' + coords.latlng.lng);
-        }
-    }
-
-
-    //Removed routes when clicking on map
-    // Add custom routes
-    /*if(customRouteEnabled)
-    {
-        if(event.ctrlKey)
-            customRouteConnections.pop();
-        else
-            customRouteConnections.push(coords.latlng);
-
-        if (customRoute instanceof L.Polyline)
-        {
-            map.removeLayer(customRoute);
-        }
-
-        customRoute = L.polyline(customRouteConnections);
-        map.addLayer(customRoute);
-    }*/
 }
 
 function changeCursor()
@@ -546,11 +202,14 @@ function changeCursor()
 
 $("#day").on("input", function()
 {
+    $.cookie('ignore-days', null);
+
     day = $('#day').val();
-    addMarkers();
+    Map.addMarkers();
 
     if($("#routes").val() == 1)
-        drawLines();
+        Map.drawLines();
+
 
 });
 
@@ -565,41 +224,44 @@ $("#search").on("input", function()
                 searchTerms.push(value.trim());
         }
     });
-    addMarkers();
+    Map.addMarkers();
 });
 
 $("#routes").on("change", function()
 {
     if($("#routes").val() == 0) {
         if (polylines instanceof L.Polyline) {
-            map.removeLayer(polylines);
+            baseMap.removeLayer(polylines);
         }
     }
     else {
-        drawLines();
+        Map.drawLines();
     }
 });
 
 $("#tools").on("change", function()
 {
     toolType = $("#tools").val();
-    addMarkers();
+    Map.addMarkers();
 });
 
 $("#reset-markers").on("change", function()
 {
     if($("#reset-markers").val() == 'clear')
     {
-        Cookies.set('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
-        disableMarkers = Cookies.get('removed-items').split(';');
+        $.cookie('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
+        $.cookie('removed-items-2', '', { expires: resetMarkersDaily ? 1 : 999});
+
+        disableMarkers =  $.cookie('removed-items').split('');
         $("#reset-markers").val('false');
+        Menu.refreshItemsCounter();
     }
 
     resetMarkersDaily = $("#reset-markers").val() == 'true';
-    Cookies.set('removed-markers-daily', resetMarkersDaily, 999);
+    $.cookie('removed-markers-daily', resetMarkersDaily, { expires: 999 });
 
 
-    removeCollectedMarkers();
+    Map.removeCollectedMarkers();
 });
 
 $("#custom-routes").on("change", function()
@@ -609,7 +271,7 @@ $("#custom-routes").on("change", function()
     if(temp == 'clear')
     {
         customRouteConnections = [];
-        map.removeLayer(customRoute);
+        baseMap.removeLayer(polylines);
         customRouteEnabled = true;
         $("#custom-routes").val('1');
     }
@@ -629,8 +291,12 @@ $('#show-coordinates').on('change', function()
 $("#language").on("change", function()
 {
     lang = $("#language").val();
-    Cookies.set('language', lang);
-    loadLanguage();
+    $.cookie('language', lang, { expires: 999 });
+    Language.setMenuLanguage();
+
+
+    Map.addMarkers();
+    Menu.refreshMenu();
 });
 
 $('.menu-option.clickable').on('click', function ()
@@ -648,10 +314,11 @@ $('.menu-option.clickable').on('click', function ()
     {
         enabledTypes.push(menu.data('type'));
     }
-    addMarkers();
+    Map.addMarkers();
     if($("#routes").val() == 1)
-        drawLines();
+        Map.drawLines();
 });
+
 
 $('.open-submenu').on('click', function(e) {
     e.stopPropagation();
@@ -662,12 +329,11 @@ $(document).on('click', '.collectible', function(){
     var collectible = $(this);
     collectible.toggleClass('disabled');
 
-    removeItemFromMap(collectible.data('type'));
+    Map.removeItemFromMap(collectible.data('type'));
 
     if($("#routes").val() == 1)
-        drawLines();
+        Map.drawLines();
 });
-
 
 $('.menu-toggle').on('click', function()
 {
@@ -682,24 +348,9 @@ $('.menu-toggle').on('click', function()
         $('.menu-toggle').text('>');
     }
     $('.timer-container').toggleClass('timer-menu-opened');
+    $('.counter-container').toggleClass('counter-menu-opened');
+
 });
-
-
-//a hide/show all function
-function showall() {
-    for (i of categoryButtons){
-        i.children[1].classList.remove("disabled")
-    }
-    enabledTypes = categories;
-    addMarkers();
-}
-function hideall() {
-    for (i of categoryButtons){
-        i.children[1].classList.add("disabled")
-    }
-    enabledTypes = [];
-    addMarkers();
-}
 
 setInterval(function()
 {
@@ -710,7 +361,7 @@ setInterval(function()
     var countdownDate = nextGMTMidnight - new Date();
     if(countdownDate <= 0)
     {
-        $('#countdown').text(`00:00:00`);
+        $('#countdown').text('00:00:00');
     }
     else
     {
@@ -718,11 +369,13 @@ setInterval(function()
         var minutes = Math.floor((countdownDate % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((countdownDate % (1000 * 60)) / 1000);
 
-        $('#countdown').text(`${addZeroToNumber(hours)}:${addZeroToNumber(minutes)}:${addZeroToNumber(seconds)}`);
+        $('#countdown').text(addZeroToNumber(hours)+':'+addZeroToNumber(minutes)+':'+addZeroToNumber(seconds));
+
+        if(getVirtual(new Date()).getHours() >= 22 || getVirtual(new Date()).getHours() < 5)
+            $('#day-cycle').css('background', 'url(assets/images/moon.png)');
+        else
+            $('#day-cycle').css('background', 'url(assets/images/sun.png)');
     }
-
-
-
 }, 1000);
 
 function addZeroToNumber(number)
@@ -732,50 +385,15 @@ function addZeroToNumber(number)
     return number;
 }
 
-function exportCustomRoute()
+/**
+ *  RDR2 Free roam timer
+ *  Thanks to kanintesova
+ **/
+var virtualOrigin = Date.parse("2019-08-15T06:00:00Z"),
+    realOrigin = Date.parse("2019-08-15T14:36:00Z"),
+    factor = 30;
+function getVirtual(time)
 {
-
-    const el = document.createElement('textarea');
-    el.value = customRouteConnections.join(',');
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el)
-
-    alert('Route exported!');
-}
-
-function importCustomRoute() {
-    var input = prompt("Enter the route code", "");
-
-    if (input == null || input == "")
-    {
-        alert('Empty route');
-    }
-    else
-    {
-        loadCustomRoute(input);
-    }
-}
-
-function loadCustomRoute(input)
-{
-    try
-    {
-        var connections = [];
-        $.each(input.split(','), function (key, value) {
-            connections.push(visibleMarkers[value]._latlng);
-        });
-
-        if (polylines instanceof L.Polyline) {
-            map.removeLayer(polylines);
-        }
-
-        polylines = L.polyline(connections, {'color': '#9a3033'});
-        map.addLayer(polylines);
-    }
-    catch(e)
-    {
-        alert('Invalid route');
-    }
+    var now = new Date(virtualOrigin + (time - realOrigin) * factor);
+    return new Date(now.getTime() + now.getTimezoneOffset() * 60000);
 }
