@@ -42,7 +42,7 @@ var lang;
 var languageData = [];
 
 var nazarLocations = [];
-var nazarCurrentLocation = 1;
+var nazarCurrentLocation = 0;
 var nazarCurrentDate = '';
 
 var fastTravelData;
