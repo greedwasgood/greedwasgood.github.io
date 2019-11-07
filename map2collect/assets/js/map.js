@@ -16,7 +16,6 @@ Map.init = function ()
     var mapLayers = [];
     mapLayers['Default'] = L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', { noWrap: true, bounds: boundsTiles });
     mapLayers['Detailed'] = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles});
-    mapLayers['Dark'] = L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles});
 
     baseMap = L.map('map', {
         preferCanvas: true,
@@ -30,12 +29,7 @@ Map.init = function ()
     var baseMapsLayers = {
         "Default": mapLayers['Default'],
         "Detailed": mapLayers['Detailed'],
-        "Dark": mapLayers['Dark']
     };
-
-    L.control.zoom({
-        position:'bottomright'
-    }).addTo(baseMap);
 
     L.control.layers(baseMapsLayers).addTo(baseMap);
 
@@ -244,9 +238,6 @@ Map.getIconColor = function (value)
             break;
         case "day_3":
             return "purple";
-            break;
-        case "weekly":
-            return "green";
             break;
     }
 };
