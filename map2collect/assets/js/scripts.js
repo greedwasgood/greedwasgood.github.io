@@ -60,7 +60,7 @@ function init()
 {
 
     wikiLanguage['de-de'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Sammler-Landkarte-Benutzerhandbuch-(Deutsch)';
-    wikiLanguage['en-us'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)';
+    wikiLanguage['en-us'] = 'https://github.com/greedwasgood/greedwasgood.github.io/wiki/RDO-Collector-map-user-guide-(Russian)';
     wikiLanguage['fr-fr'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-Guide-d\'Utilisateur-(French)';
     wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)';
 	wikiLanguage['ru'] = 'https://github.com/greedwasgood/greedwasgood.github.io/wiki/RDO-Collector-map-user-guide-(Russian)';
