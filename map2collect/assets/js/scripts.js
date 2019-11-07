@@ -37,7 +37,7 @@ var customRouteConnections = [];
 var showCoordinates = false;
 
 var toolType = '3'; //All type of tools
-var avaliableLanguages = ['de-de', 'es-es', 'en-us', 'fr-fr', 'it-it', 'pt-br', 'pl', 'ru', 'zh-s', 'zh-t'];
+var avaliableLanguages = ['en-us', 'ru'];
 var lang;
 var languageData = [];
 
@@ -139,10 +139,6 @@ function setMapBackground(mapName){
 
         case 'Detailed':
             $('#map').css('background-color', '#d2b790');
-            break;
-
-        case 'Dark':
-            $('#map').css('background-color', '#3d3d3d');
             break;
     }
 
