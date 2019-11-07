@@ -202,4 +202,3 @@ $('.menu-toggle').on('click', function()
         $('.menu-toggle').text('>');
     }
 });
-
