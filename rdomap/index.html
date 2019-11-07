@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="./favicon.png"/>
+
+    <title>Red Dead Online - Interactive Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="assets/js/heatmap.min.js"></script>
+    <script src="assets/js/leaflet-heatmap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="https://unpkg.com/rbush@2.0.2/rbush.js"></script>
+    <script>var module = {};</script>
+    <script src="assets/js/leaflet.canvas-markers.js"></script>
+    <script>module.exports(L);</script>
+
+
+    <link rel="stylesheet" href="assets/css/styles.css?nocache=26" />
+
+
+</head>
+<body onload="init()">
+<div class="side-menu">
+    <h2><span data-text="menu.markers">Markers</span> <span class="help-button">[<a href="https://openrdr.jeanropke.net/">OpenRDR</a>]</span></h2>
+    <div class="hide-show-container">
+        <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
+        <a data-text="menu.show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="boats">
+            <img class="icon" src="./assets/images/icons/boats.png" />
+            <span data-text="menu.boats">Boats</span>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="campfires">
+            <img class="icon" src="./assets/images/icons/campfires.png" />
+            <span data-text="menu.campfires">Campfires</span>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="defend_campsite">
+            <img class="icon" src="./assets/images/icons/defend_campsite.png" />
+            <span data-text="menu.defend_campsite">Defend Campsites</span>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="hideouts">
+            <img class="icon" src="./assets/images/icons/hideouts.png" />
+            <span data-text="menu.hideouts">Gang Hideouts</span>
+        </div>
+    </div>
+    <div>
+        <div class="menu-option clickable" data-type="plants">
+            <img class="icon" src="./assets/images/icons/plants.png" />
+            <span data-text="menu.plants">Plants</span>
+            <div class="open-submenu"></div>
+        </div>
+        <div class="menu-hidden" data-type="plants"></div>
+    </div>
+    <h2 data-text="menu.animals">Animals</h2>
+    <div class="menu-two-column">
+        <div class="menu-row">
+            <div class="menu-option animal-clickable" data-type="alligator">
+                <img class="icon" src="https://s.rsg.sc/sc/images/games/RDR2/compendium/CMPNDM_ANIMALS/ANIMAL_ALLIGATOR_MEDIUM.png" />
+                <span data-text="menu.animal.alligator" class="disabled">Alligator</span>
+            </div>
+        </div>
+        <div class="menu-row">
+            <div class="menu-option animal-clickable" data-type="armadillo">
+                <img class="icon" src="https://s.rsg.sc/sc/images/games/RDR2/compendium/CMPNDM_ANIMALS/ANIMAL_ARMADILLO.png" />
+                <span data-text="menu.animal.armadillo" class="disabled">Armadillo</span>
+            </div>
+        </div>
+        <div class="menu-row">
+            <div class="menu-option animal-clickable" data-type="badger">
+                <img class="icon" src="https://s.rsg.sc/sc/images/games/RDR2/compendium/CMPNDM_ANIMALS/ANIMAL_BADGER.png" />
+                <span data-text="menu.animal.badger" class="disabled">Badger</span>
+            </div>
+        </div>
+        <div class="menu-row">
+            <div class="menu-option animal-clickable" data-type="bat">
+                <img class="icon" src="https://s.rsg.sc/sc/images/games/RDR2/compendium/CMPNDM_ANIMALS/ANIMAL_BAT.png" />
+                <span data-text="menu.animal.bat" class="disabled">Bat</span>
+            </div>
+        </div>
+        <div class="menu-row">
+            <div class="menu-option animal-clickable" data-type="bear">
+                <img class="icon" src="https://s.rsg.sc/sc/images/games/RDR2/compendium/CMPNDM_ANIMALS/ANIMAL_BEAR.png" />
+                <span data-text="menu.animal.bear" class="disabled">Bear</span>
+            </div>
+        </div>
+        <div class="menu-row">
+            <div class="menu-option animal-clickable" data-type="cougar">
+                <img class="icon" src="https://s.rsg.sc/sc/images/games/RDR2/compendium/CMPNDM_ANIMALS/ANIMAL_COUGAR.png" />
+                <span data-text="menu.animal.cougar" class="disabled">Cougar</span>
+            </div>
+        </div>
+        <div class="menu-row">
+            <div class="menu-option animal-clickable" data-type="loon">
+                <img class="icon" src="https://s.rsg.sc/sc/images/games/RDR2/compendium/CMPNDM_ANIMALS/ANIMAL_LOON_PACIFIC.png" />
+                <span data-text="menu.animal.loon" class="disabled">Loon</span>
+            </div>
+        </div>
+        <div class="menu-row">
+            <div class="menu-option animal-clickable" data-type="muskrat">
+                <img class="icon" src="https://s.rsg.sc/sc/images/games/RDR2/compendium/CMPNDM_ANIMALS/ANIMAL_MUSKRAT.png" />
+                <span data-text="menu.animal.muskrat" class="disabled">Muskrat</span>
+            </div>
+        </div>
+        <div class="menu-row">
+            <div class="menu-option animal-clickable" data-type="panther">
+                <img class="icon" src="https://s.rsg.sc/sc/images/games/RDR2/compendium/CMPNDM_ANIMALS/ANIMAL_PANTHER.png" />
+                <span data-text="menu.animal.panther" class="disabled">Panther</span>
+            </div>
+        </div>
+        <div class="menu-row">
+            <div class="menu-option animal-clickable" data-type="wolf">
+                <img class="icon" src="https://s.rsg.sc/sc/images/games/RDR2/compendium/CMPNDM_ANIMALS/ANIMAL_WOLF_GRAY.png" />
+                <span data-text="menu.animal.wolf" class="disabled">Wolf</span>
+            </div>
+        </div>
+    </div>
+    <div class="search-container">
+        <h2 data-text="menu.search">Search</h2>
+        <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;" autocomplete="off">
+    </div>
+
+    <div class="settings-container">
+        <h2 data-text="menu.settings">Settings</h2>
+        <div class="input-container">
+            <label for="language" data-text="menu.language">Language</label>
+            <select class="input-day" id="language">
+                <option value="en-us" selected>English</option>
+                <option value="fr-fr">Français</option>
+                <option value="pt-br">Português</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
+            <select class="input-day" id="show-coordinates">
+                <option value="1" data-text="menu.yes">Yes</option>
+                <option value="0" data-text="menu.no" selected>No</option>
+            </select>
+        </div>
+    </div>
+    <div class="issues-container">
+        <h2 data-text="menu.issues">Issues</h2>
+        <a data-text="menu.report_issues" href="https://github.com/jeanropke/RDOMap/issues" target="_blank">Report issues here!</a>
+    </div>
+    <div class="hide-show-container">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_donations" />
+            <input type="hidden" name="business" value="X3A9DHBPW3B2A" />
+            <input type="hidden" name="currency_code" value="USD" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+    </div>
+
+
+    <br>
+</div>
+<div class="menu-toggle">></div>
+
+<div id="map"><div class="legend geometry top center hide">
+    <div class="wrapper">
+        <div class="content"></div>
+    </div>
+</div></div>
+
+<div class="lat-lng-container"><p></p><button id="lat-lng-container-close-button">×</button></div>
+<script      src="assets/js/map.js?nocache=26"></script>
+<script  src="assets/js/heatmap.js?nocache=26"></script>
+<script src="assets/js/language.js?nocache=26"></script>
+<script     src="assets/js/menu.js?nocache=26"></script>
+<script  src="assets/js/scripts.js?nocache=26"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-39999584-5');
+</script>
+
+
+</body>
+</html>
